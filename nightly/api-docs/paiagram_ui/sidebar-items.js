@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"enum":["MainTab","SelectedItem","SelectedItems"],"fn":["apply_custom_fonts","show_ui"],"mod":["export_typst_diagram","save","tabs"],"struct":["ExtendingRouteSelection","ExtendingTripSelection","GlobalTimer","IntervalSelection","MainUiState","StationSelection","TimetableEntrySelection","UiPlugin"]};
+window.SIDEBAR_ITEMS = {"enum":["MainTab","SelectedItem"],"fn":["apply_custom_fonts","show_ui"],"mod":["export_typst_diagram","save","tabs"],"struct":["GlobalTimer","MainUiState","UiPlugin"]};
