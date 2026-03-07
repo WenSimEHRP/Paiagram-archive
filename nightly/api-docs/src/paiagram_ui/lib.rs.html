@@ -27,7 +27,7 @@
 <a href=#27 id=27 data-nosnippet>27</a>    import::{DownloadFile, LoadGTFS, LoadOuDia, LoadQETRC},
 <a href=#28 id=28 data-nosnippet>28</a>    route::Route,
 <a href=#29 id=29 data-nosnippet>29</a>    settings::UserPreferences,
-<a href=#30 id=30 data-nosnippet>30</a>    trip::{Trip, TripSchedule},
+<a href=#30 id=30 data-nosnippet>30</a>    trip::{ConvertDerivedEntryToExplicit, Trip, TripSchedule},
 <a href=#31 id=31 data-nosnippet>31</a>    units::time::TimetableTime,
 <a href=#32 id=32 data-nosnippet>32</a>    vehicle::Vehicle,
 <a href=#33 id=33 data-nosnippet>33</a>};
@@ -106,7 +106,7 @@
 <a href=#106 id=106 data-nosnippet>106</a>
 <a href=#107 id=107 data-nosnippet>107</a>        <span class="kw">let </span>is_derived = is_derived_q.get(entry).is_ok();
 <a href=#108 id=108 data-nosnippet>108</a>        <span class="kw">if </span>is_derived &amp;&amp; ui.button(<span class="string">"Convert to explicit"</span>).clicked() {
-<a href=#109 id=109 data-nosnippet>109</a>            commands.entity(entry).remove::&lt;IsDerivedEntry&gt;();
+<a href=#109 id=109 data-nosnippet>109</a>            commands.trigger(ConvertDerivedEntryToExplicit { entity: entry });
 <a href=#110 id=110 data-nosnippet>110</a>        } <span class="kw">else if </span>!is_derived &amp;&amp; ui.button(<span class="string">"Delete"</span>).clicked() {
 <a href=#111 id=111 data-nosnippet>111</a>            commands.entity(entry).despawn();
 <a href=#112 id=112 data-nosnippet>112</a>        }
@@ -129,7 +129,7 @@
 <a href=#129 id=129 data-nosnippet>129</a>        <span class="kw">if </span>ui.button(<span class="string">"Extend"</span>).clicked() {
 <a href=#130 id=130 data-nosnippet>130</a>            <span class="kw">let </span><span class="kw-2">mut </span>last_time = <span class="prelude-val">None</span>;
 <a href=#131 id=131 data-nosnippet>131</a>            <span class="kw">if let </span><span class="prelude-val">Ok</span>(schedule) = schedule_q.get(parent)
-<a href=#132 id=132 data-nosnippet>132</a>                &amp;&amp; <span class="kw">let </span><span class="prelude-val">Some</span>(time) = schedule.iter().rev().find_map(|e| entry_q.get(e).ok())
+<a href=#132 id=132 data-nosnippet>132</a>                &amp;&amp; <span class="kw">let </span><span class="prelude-val">Some</span>(time) = schedule.iter().rev().find_map(|e| entry_q.get(<span class="kw-2">*</span>e).ok())
 <a href=#133 id=133 data-nosnippet>133</a>            {
 <a href=#134 id=134 data-nosnippet>134</a>                last_time = <span class="prelude-val">Some</span>(time.dep);
 <a href=#135 id=135 data-nosnippet>135</a>            }

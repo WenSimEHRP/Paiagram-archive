@@ -63,7 +63,7 @@
 <a href=#63 id=63 data-nosnippet>63</a>                ui.label(<span class="string">"Arrival"</span>);
 <a href=#64 id=64 data-nosnippet>64</a>                ui.label(<span class="string">"Departure"</span>);
 <a href=#65 id=65 data-nosnippet>65</a>                ui.end_row();
-<a href=#66 id=66 data-nosnippet>66</a>                <span class="kw">for </span>it <span class="kw">in </span>entry_q.iter_many(trip.schedule) {
+<a href=#66 id=66 data-nosnippet>66</a>                <span class="kw">for </span>it <span class="kw">in </span>entry_q.iter_many(trip.schedule.iter()) {
 <a href=#67 id=67 data-nosnippet>67</a>                    row_ui(
 <a href=#68 id=68 data-nosnippet>68</a>                        <span class="kw-2">&amp;</span>platform_q,
 <a href=#69 id=69 data-nosnippet>69</a>                        <span class="kw-2">&amp;</span>station_q,

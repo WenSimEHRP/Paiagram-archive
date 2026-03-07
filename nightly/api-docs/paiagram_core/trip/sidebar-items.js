@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"mod":["class","routing"],"struct":["IsTimingReference","Trip","TripBundle","TripClass","TripPlugin","TripQuery","TripQueryItem","TripSpatialIndex","TripSpatialIndexItem","TripVehicles"],"type":["TripSchedule"]};
+window.SIDEBAR_ITEMS = {"mod":["class","routing"],"struct":["ConvertDerivedEntryToExplicit","IsTimingReference","Trip","TripBundle","TripClass","TripNominalSchedule","TripPlugin","TripQuery","TripQueryItem","TripSchedule","TripSpatialIndex","TripSpatialIndexItem","TripVehicles"]};

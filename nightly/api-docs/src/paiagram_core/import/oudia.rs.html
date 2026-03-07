@@ -117,53 +117,65 @@
 <a href=#117 id=117 data-nosnippet>117</a>                <span class="kw">let </span>trip_class = train
 <a href=#118 id=118 data-nosnippet>118</a>                    .class_index
 <a href=#119 id=119 data-nosnippet>119</a>                    .map_or(class_resource.default_class, |idx| class_instances[idx]);
-<a href=#120 id=120 data-nosnippet>120</a>                commands
-<a href=#121 id=121 data-nosnippet>121</a>                    .spawn(TripBundle::new(<span class="kw-2">&amp;</span>train.name, TripClass(trip_class.entity())))
-<a href=#122 id=122 data-nosnippet>122</a>                    .with_children(|bundle| {
-<a href=#123 id=123 data-nosnippet>123</a>                        <span class="kw">for </span>(stop, <span class="kw-2">mut </span>times) <span class="kw">in </span><span class="kw-2">&amp;</span>times
-<a href=#124 id=124 data-nosnippet>124</a>                            .into_iter()
-<a href=#125 id=125 data-nosnippet>125</a>                            .enumerate()
-<a href=#126 id=126 data-nosnippet>126</a>                            .filter_map(|(i, time)| {
-<a href=#127 id=127 data-nosnippet>127</a>                                <span class="kw">let </span>time = time<span class="question-mark">?</span>;
-<a href=#128 id=128 data-nosnippet>128</a>                                <span class="kw">if </span><span class="macro">matches!</span>(time.passing_mode, PassingMode::NoOperation) {
-<a href=#129 id=129 data-nosnippet>129</a>                                    <span class="kw">return </span><span class="prelude-val">None</span>;
-<a href=#130 id=130 data-nosnippet>130</a>                                }
-<a href=#131 id=131 data-nosnippet>131</a>                                <span class="kw">let </span>station_index = <span class="kw">match </span>train.direction {
-<a href=#132 id=132 data-nosnippet>132</a>                                    Direction::Down =&gt; i,
-<a href=#133 id=133 data-nosnippet>133</a>                                    Direction::Up =&gt; station_instances.len() - <span class="number">1 </span>- i,
-<a href=#134 id=134 data-nosnippet>134</a>                                };
-<a href=#135 id=135 data-nosnippet>135</a>                                <span class="kw">let </span>stop = station_instances[station_index];
-<a href=#136 id=136 data-nosnippet>136</a>                                <span class="prelude-val">Some</span>((stop, time))
-<a href=#137 id=137 data-nosnippet>137</a>                            })
-<a href=#138 id=138 data-nosnippet>138</a>                            .chunk_by(|(s, _t)| <span class="kw-2">*</span>s)
-<a href=#139 id=139 data-nosnippet>139</a>                        {
-<a href=#140 id=140 data-nosnippet>140</a>                            <span class="kw">let </span>(<span class="kw">_</span>, first_time) = times.next().unwrap();
-<a href=#141 id=141 data-nosnippet>141</a>                            <span class="kw">let </span>last_time = times.last().map(|(<span class="kw">_</span>, t)| t).unwrap_or(first_time);
-<a href=#142 id=142 data-nosnippet>142</a>                            <span class="kw">let </span>arrival = <span class="kw">if </span><span class="macro">matches!</span>(first_time.passing_mode, PassingMode::Pass) {
-<a href=#143 id=143 data-nosnippet>143</a>                                <span class="prelude-val">None
-<a href=#144 id=144 data-nosnippet>144</a>                            </span>} <span class="kw">else </span>{
-<a href=#145 id=145 data-nosnippet>145</a>                                <span class="prelude-val">Some</span>(
-<a href=#146 id=146 data-nosnippet>146</a>                                    first_time
-<a href=#147 id=147 data-nosnippet>147</a>                                        .arrival
-<a href=#148 id=148 data-nosnippet>148</a>                                        .map_or(TravelMode::Flexible, |t| TravelMode::At(t)),
-<a href=#149 id=149 data-nosnippet>149</a>                                )
-<a href=#150 id=150 data-nosnippet>150</a>                            };
-<a href=#151 id=151 data-nosnippet>151</a>                            <span class="kw">let </span>departure = last_time
-<a href=#152 id=152 data-nosnippet>152</a>                                .departure
-<a href=#153 id=153 data-nosnippet>153</a>                                .map_or(TravelMode::Flexible, |t| TravelMode::At(t));
-<a href=#154 id=154 data-nosnippet>154</a>                            bundle.spawn(EntryBundle::new(arrival, departure, stop.entity()));
-<a href=#155 id=155 data-nosnippet>155</a>                        }
-<a href=#156 id=156 data-nosnippet>156</a>                    });
-<a href=#157 id=157 data-nosnippet>157</a>            }
-<a href=#158 id=158 data-nosnippet>158</a>        }
-<a href=#159 id=159 data-nosnippet>159</a>    }
-<a href=#160 id=160 data-nosnippet>160</a>}
-<a href=#161 id=161 data-nosnippet>161</a>
-<a href=#162 id=162 data-nosnippet>162</a><span class="kw">fn </span>convert_timetable_entry(entry: OuDiaTimetableEntry) -&gt; TimetableEntry {
-<a href=#163 id=163 data-nosnippet>163</a>    TimetableEntry {
-<a href=#164 id=164 data-nosnippet>164</a>        passing_mode: entry.passing_mode,
-<a href=#165 id=165 data-nosnippet>165</a>        arrival: entry.arrival.map(TimetableTime),
-<a href=#166 id=166 data-nosnippet>166</a>        departure: entry.departure.map(TimetableTime),
-<a href=#167 id=167 data-nosnippet>167</a>    }
-<a href=#168 id=168 data-nosnippet>168</a>}
+<a href=#120 id=120 data-nosnippet>120</a>
+<a href=#121 id=121 data-nosnippet>121</a>                <span class="kw">let </span>times_iter = times
+<a href=#122 id=122 data-nosnippet>122</a>                    .into_iter()
+<a href=#123 id=123 data-nosnippet>123</a>                    .enumerate()
+<a href=#124 id=124 data-nosnippet>124</a>                    .filter_map(|(i, time)| {
+<a href=#125 id=125 data-nosnippet>125</a>                        <span class="kw">let </span>time = time<span class="question-mark">?</span>;
+<a href=#126 id=126 data-nosnippet>126</a>                        <span class="kw">if </span><span class="macro">matches!</span>(time.passing_mode, PassingMode::NoOperation) {
+<a href=#127 id=127 data-nosnippet>127</a>                            <span class="kw">return </span><span class="prelude-val">None</span>;
+<a href=#128 id=128 data-nosnippet>128</a>                        }
+<a href=#129 id=129 data-nosnippet>129</a>                        <span class="kw">let </span>station_index = <span class="kw">match </span>train.direction {
+<a href=#130 id=130 data-nosnippet>130</a>                            Direction::Down =&gt; i,
+<a href=#131 id=131 data-nosnippet>131</a>                            Direction::Up =&gt; station_instances.len() - <span class="number">1 </span>- i,
+<a href=#132 id=132 data-nosnippet>132</a>                        };
+<a href=#133 id=133 data-nosnippet>133</a>                        <span class="kw">let </span>stop = station_instances[station_index];
+<a href=#134 id=134 data-nosnippet>134</a>                        <span class="prelude-val">Some</span>((stop, time))
+<a href=#135 id=135 data-nosnippet>135</a>                    })
+<a href=#136 id=136 data-nosnippet>136</a>                    .chunk_by(|(s, _t)| <span class="kw-2">*</span>s);
+<a href=#137 id=137 data-nosnippet>137</a>
+<a href=#138 id=138 data-nosnippet>138</a>                <span class="kw">let </span>nominal_entries: Vec&lt;<span class="kw">_</span>&gt; = times_iter
+<a href=#139 id=139 data-nosnippet>139</a>                    .into_iter()
+<a href=#140 id=140 data-nosnippet>140</a>                    .map(|(stop, <span class="kw-2">mut </span>times)| {
+<a href=#141 id=141 data-nosnippet>141</a>                        <span class="kw">let </span>(<span class="kw">_</span>, first_time) = times.next().unwrap();
+<a href=#142 id=142 data-nosnippet>142</a>                        <span class="kw">let </span>last_time = times.last().map(|(<span class="kw">_</span>, t)| t).unwrap_or(first_time);
+<a href=#143 id=143 data-nosnippet>143</a>                        <span class="kw">let </span>arrival = <span class="kw">if </span><span class="macro">matches!</span>(first_time.passing_mode, PassingMode::Pass) {
+<a href=#144 id=144 data-nosnippet>144</a>                            <span class="prelude-val">None
+<a href=#145 id=145 data-nosnippet>145</a>                        </span>} <span class="kw">else </span>{
+<a href=#146 id=146 data-nosnippet>146</a>                            <span class="prelude-val">Some</span>(
+<a href=#147 id=147 data-nosnippet>147</a>                                first_time
+<a href=#148 id=148 data-nosnippet>148</a>                                    .arrival
+<a href=#149 id=149 data-nosnippet>149</a>                                    .map_or(TravelMode::Flexible, |t| TravelMode::At(t)),
+<a href=#150 id=150 data-nosnippet>150</a>                            )
+<a href=#151 id=151 data-nosnippet>151</a>                        };
+<a href=#152 id=152 data-nosnippet>152</a>                        <span class="kw">let </span>departure = last_time
+<a href=#153 id=153 data-nosnippet>153</a>                            .departure
+<a href=#154 id=154 data-nosnippet>154</a>                            .map_or(TravelMode::Flexible, |t| TravelMode::At(t));
+<a href=#155 id=155 data-nosnippet>155</a>                        commands
+<a href=#156 id=156 data-nosnippet>156</a>                            .spawn(EntryBundle::new(arrival, departure, stop.entity()))
+<a href=#157 id=157 data-nosnippet>157</a>                            .id()
+<a href=#158 id=158 data-nosnippet>158</a>                    })
+<a href=#159 id=159 data-nosnippet>159</a>                    .collect();
+<a href=#160 id=160 data-nosnippet>160</a>
+<a href=#161 id=161 data-nosnippet>161</a>                commands
+<a href=#162 id=162 data-nosnippet>162</a>                    .spawn_empty()
+<a href=#163 id=163 data-nosnippet>163</a>                    .add_children(<span class="kw-2">&amp;</span>nominal_entries)
+<a href=#164 id=164 data-nosnippet>164</a>                    .insert(TripBundle::new(
+<a href=#165 id=165 data-nosnippet>165</a>                        <span class="kw-2">&amp;</span>train.name,
+<a href=#166 id=166 data-nosnippet>166</a>                        TripClass(trip_class.entity()),
+<a href=#167 id=167 data-nosnippet>167</a>                        nominal_entries,
+<a href=#168 id=168 data-nosnippet>168</a>                    ));
+<a href=#169 id=169 data-nosnippet>169</a>            }
+<a href=#170 id=170 data-nosnippet>170</a>        }
+<a href=#171 id=171 data-nosnippet>171</a>    }
+<a href=#172 id=172 data-nosnippet>172</a>}
+<a href=#173 id=173 data-nosnippet>173</a>
+<a href=#174 id=174 data-nosnippet>174</a><span class="kw">fn </span>convert_timetable_entry(entry: OuDiaTimetableEntry) -&gt; TimetableEntry {
+<a href=#175 id=175 data-nosnippet>175</a>    TimetableEntry {
+<a href=#176 id=176 data-nosnippet>176</a>        passing_mode: entry.passing_mode,
+<a href=#177 id=177 data-nosnippet>177</a>        arrival: entry.arrival.map(TimetableTime),
+<a href=#178 id=178 data-nosnippet>178</a>        departure: entry.departure.map(TimetableTime),
+<a href=#179 id=179 data-nosnippet>179</a>    }
+<a href=#180 id=180 data-nosnippet>180</a>}
 </code></pre></div></section></main></body></html>

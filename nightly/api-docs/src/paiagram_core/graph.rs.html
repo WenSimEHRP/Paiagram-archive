@@ -86,11 +86,11 @@
 <a href=#86 id=86 data-nosnippet>86</a>}
 <a href=#87 id=87 data-nosnippet>87</a>
 <a href=#88 id=88 data-nosnippet>88</a><span class="kw">impl </span>Graph {
-<a href=#89 id=89 data-nosnippet>89</a>    <span class="kw">pub fn </span>route_between&lt;<span class="lifetime">'w</span>&gt;(
+<a href=#89 id=89 data-nosnippet>89</a>    <span class="kw">pub fn </span>route_between(
 <a href=#90 id=90 data-nosnippet>90</a>        <span class="kw-2">&amp;</span><span class="self">self</span>,
 <a href=#91 id=91 data-nosnippet>91</a>        source: Entity,
 <a href=#92 id=92 data-nosnippet>92</a>        target: Entity,
-<a href=#93 id=93 data-nosnippet>93</a>        interval_q: <span class="kw-2">&amp;</span>Query&lt;<span class="lifetime">'w</span>, <span class="lifetime">'w</span>, IntervalQuery&gt;,
+<a href=#93 id=93 data-nosnippet>93</a>        interval_q: <span class="kw-2">&amp;</span>Query&lt;IntervalQuery&gt;,
 <a href=#94 id=94 data-nosnippet>94</a>    ) -&gt; <span class="prelude-ty">Option</span>&lt;(i32, Vec&lt;Entity&gt;)&gt; {
 <a href=#95 id=95 data-nosnippet>95</a>        astar(
 <a href=#96 id=96 data-nosnippet>96</a>            <span class="kw-2">&amp;</span><span class="self">self</span>.map,
