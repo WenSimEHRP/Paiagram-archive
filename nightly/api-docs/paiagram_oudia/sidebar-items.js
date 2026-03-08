@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"enum":["Direction","PassingMode","Rule","Structure"],"fn":["parse_oud2","parse_oud2_to_ast"],"mod":["write"],"struct":["Diagram","LineMeta","OUD2Parser","Root","Station","TimetableEntry","Train","TrainClass"]};
+window.SIDEBAR_ITEMS = {"enum":["Direction","PassingMode","Rule","Structure"],"fn":["parse_oud2","parse_oud2_to_ast"],"macro":["pair","structure"],"mod":["write"],"struct":["Diagram","LineMeta","OUD2Parser","Root","Station","TimetableEntry","Train","TrainClass"]};
