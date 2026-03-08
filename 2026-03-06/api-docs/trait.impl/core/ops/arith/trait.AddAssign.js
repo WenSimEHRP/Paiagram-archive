@@ -1,0 +1,9 @@
+(function() {
+    var implementors = Object.fromEntries([["paiagram_core",[["impl <a class=\"trait\" href=\"https://doc.rust-lang.org/1.93.1/core/ops/arith/trait.AddAssign.html\" title=\"trait core::ops::arith::AddAssign\">AddAssign</a> for <a class=\"struct\" href=\"paiagram_core/units/distance/struct.Distance.html\" title=\"struct paiagram_core::units::distance::Distance\">Distance</a>"],["impl <a class=\"trait\" href=\"https://doc.rust-lang.org/1.93.1/core/ops/arith/trait.AddAssign.html\" title=\"trait core::ops::arith::AddAssign\">AddAssign</a> for <a class=\"struct\" href=\"paiagram_core/units/speed/struct.Velocity.html\" title=\"struct paiagram_core::units::speed::Velocity\">Velocity</a>"],["impl <a class=\"trait\" href=\"https://doc.rust-lang.org/1.93.1/core/ops/arith/trait.AddAssign.html\" title=\"trait core::ops::arith::AddAssign\">AddAssign</a> for <a class=\"struct\" href=\"paiagram_core/units/time/struct.Duration.html\" title=\"struct paiagram_core::units::time::Duration\">Duration</a>"],["impl <a class=\"trait\" href=\"https://doc.rust-lang.org/1.93.1/core/ops/arith/trait.AddAssign.html\" title=\"trait core::ops::arith::AddAssign\">AddAssign</a>&lt;<a class=\"struct\" href=\"paiagram_core/units/time/struct.Duration.html\" title=\"struct paiagram_core::units::time::Duration\">Duration</a>&gt; for <a class=\"struct\" href=\"paiagram_core/units/time/struct.TimetableTime.html\" title=\"struct paiagram_core::units::time::TimetableTime\">TimetableTime</a>"]]]]);
+    if (window.register_implementors) {
+        window.register_implementors(implementors);
+    } else {
+        window.pending_implementors = implementors;
+    }
+})()
+//{"start":57,"fragment_lengths":[1433]}
