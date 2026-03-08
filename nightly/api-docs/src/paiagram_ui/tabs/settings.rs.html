@@ -31,14 +31,14 @@
 <a href=#31 id=31 data-nosnippet>31</a>    <span class="kw-2">mut </span>preferences: ResMut&lt;UserPreferences&gt;,
 <a href=#32 id=32 data-nosnippet>32</a>    <span class="kw-2">mut </span>settings: ResMut&lt;ProjectSettings&gt;,
 <a href=#33 id=33 data-nosnippet>33</a>) {
-<a href=#34 id=34 data-nosnippet>34</a>    ui.heading(<span class="string">"Preferences"</span>);
-<a href=#35 id=35 data-nosnippet>35</a>    ui.checkbox(<span class="kw-2">&amp;mut </span>preferences.dark_mode, <span class="string">"Dark Mode"</span>);
-<a href=#36 id=36 data-nosnippet>36</a>    egui::ComboBox::new(ui.id().with(<span class="string">"settings box"</span>), <span class="string">"Language"</span>).show_ui(ui, |ui| {
+<a href=#34 id=34 data-nosnippet>34</a>    ui.heading(<span class="macro">tr!</span>(<span class="string">"settings-preferences"</span>));
+<a href=#35 id=35 data-nosnippet>35</a>    ui.checkbox(<span class="kw-2">&amp;mut </span>preferences.dark_mode, <span class="macro">tr!</span>(<span class="string">"settings-dark-mode"</span>));
+<a href=#36 id=36 data-nosnippet>36</a>    egui::ComboBox::new(ui.id().with(<span class="string">"settings box"</span>), <span class="macro">tr!</span>(<span class="string">"settings-language"</span>)).show_ui(ui, |ui| {
 <a href=#37 id=37 data-nosnippet>37</a>        <span class="kw">for </span>lang <span class="kw">in </span>Language::iter() {
 <a href=#38 id=38 data-nosnippet>38</a>            ui.selectable_value(<span class="kw-2">&amp;mut </span>preferences.lang, lang, lang.name());
 <a href=#39 id=39 data-nosnippet>39</a>        }
 <a href=#40 id=40 data-nosnippet>40</a>    });
-<a href=#41 id=41 data-nosnippet>41</a>    ui.heading(<span class="string">"Project Settings"</span>);
+<a href=#41 id=41 data-nosnippet>41</a>    ui.heading(<span class="macro">tr!</span>(<span class="string">"settings-project-settings"</span>));
 <a href=#42 id=42 data-nosnippet>42</a>    ui.text_edit_multiline(<span class="kw-2">&amp;mut </span>settings.remarks);
 <a href=#43 id=43 data-nosnippet>43</a>}
 </code></pre></div></section></main></body></html>
