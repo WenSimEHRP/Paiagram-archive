@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"mod":["class","routing"],"struct":["IsTimingReference","Trip","TripBundle","TripClass","TripPlugin","TripQuery","TripQueryItem","TripSpatialIndex","TripSpatialIndexItem","TripVehicles"],"type":["TripSchedule"]};

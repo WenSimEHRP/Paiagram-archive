@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"struct":["Class","ClassBundle","ClassPlugin","ClassQuery","ClassQueryItem","ClassResource","DisplayedStroke"]};

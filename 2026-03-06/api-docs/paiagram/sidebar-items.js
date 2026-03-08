@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"fn":["handle_args","main"],"struct":["Cli","PaiagramApp"]};

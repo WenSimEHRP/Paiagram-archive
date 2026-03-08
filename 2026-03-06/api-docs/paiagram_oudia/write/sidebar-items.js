@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"fn":["serialize_to","serialize_to_string"]};

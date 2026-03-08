@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"mod":["all_tabs","all_trips","classes","diagram","graph","inspector","priority_graph","settings","start","trip"],"trait":["Navigatable","Tab"]};

@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"mod":["colors","entry","export","graph","i18n","import","interval","plugin","problems","route","settings","station","trip","units","vehicle"]};
