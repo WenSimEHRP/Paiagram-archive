@@ -203,7 +203,7 @@
 <a href=#203 id=203 data-nosnippet>203</a>            <span class="kw">let </span><span class="prelude-val">Some</span>(params) = unwind_params.take() <span class="kw">else </span>{
 <a href=#204 id=204 data-nosnippet>204</a>                <span class="kw">continue</span>;
 <a href=#205 id=205 data-nosnippet>205</a>            };
-<a href=#206 id=206 data-nosnippet>206</a>            <span class="kw">let </span><span class="prelude-val">Some</span>((<span class="kw-2">mut </span>last_t, last_s)) = last_stable <span class="kw">else </span>{
+<a href=#206 id=206 data-nosnippet>206</a>            <span class="kw">let </span><span class="prelude-val">Some</span>((last_t, last_s)) = last_stable <span class="kw">else </span>{
 <a href=#207 id=207 data-nosnippet>207</a>                <span class="kw">for </span>(e, <span class="kw">_</span>, <span class="kw">_</span>) <span class="kw">in </span>flexible_stack.drain(..) {
 <a href=#208 id=208 data-nosnippet>208</a>                    commands.entity(e).remove::&lt;EntryEstimate&gt;();
 <a href=#209 id=209 data-nosnippet>209</a>                }
@@ -243,35 +243,44 @@
 <a href=#243 id=243 data-nosnippet>243</a>            <span class="kw">let </span>total_dis = distance_stack.iter().cloned().sum::&lt;Distance&gt;();
 <a href=#244 id=244 data-nosnippet>244</a>            <span class="kw">let </span><span class="kw-2">mut </span>fi = flexible_stack.drain(..);
 <a href=#245 id=245 data-nosnippet>245</a>            <span class="kw">let </span><span class="kw-2">mut </span>di = distance_stack.drain(..);
-<a href=#246 id=246 data-nosnippet>246</a>            <span class="kw">let </span>average_v = total_dis / travel_dur;
-<a href=#247 id=247 data-nosnippet>247</a>            <span class="kw">while let </span>(<span class="prelude-val">Some</span>((e, <span class="kw">_</span>, dur)), <span class="prelude-val">Some</span>(dis)) = (fi.next(), di.next()) {
-<a href=#248 id=248 data-nosnippet>248</a>                last_t += dis / average_v;
-<a href=#249 id=249 data-nosnippet>249</a>                commands.entity(e).insert(EntryEstimate {
-<a href=#250 id=250 data-nosnippet>250</a>                    arr: last_t,
-<a href=#251 id=251 data-nosnippet>251</a>                    dep: last_t + dur,
-<a href=#252 id=252 data-nosnippet>252</a>                });
-<a href=#253 id=253 data-nosnippet>253</a>                last_t += dur;
-<a href=#254 id=254 data-nosnippet>254</a>            }
-<a href=#255 id=255 data-nosnippet>255</a>            <span class="kw">match </span>params {
-<a href=#256 id=256 data-nosnippet>256</a>                UnwindParams::At(<span class="kw">_</span>) =&gt; {}
-<a href=#257 id=257 data-nosnippet>257</a>                UnwindParams::ForAt(d, t) =&gt; {
-<a href=#258 id=258 data-nosnippet>258</a>                    commands.entity(entry_entity).insert(EntryEstimate {
-<a href=#259 id=259 data-nosnippet>259</a>                        arr: initial_t + d,
-<a href=#260 id=260 data-nosnippet>260</a>                        dep: t,
-<a href=#261 id=261 data-nosnippet>261</a>                    });
-<a href=#262 id=262 data-nosnippet>262</a>                }
-<a href=#263 id=263 data-nosnippet>263</a>                UnwindParams::ForFor(ad, dd) =&gt; {
-<a href=#264 id=264 data-nosnippet>264</a>                    commands.entity(entry_entity).insert(EntryEstimate {
-<a href=#265 id=265 data-nosnippet>265</a>                        arr: initial_t + ad,
-<a href=#266 id=266 data-nosnippet>266</a>                        dep: initial_t + ad + dd,
-<a href=#267 id=267 data-nosnippet>267</a>                    });
-<a href=#268 id=268 data-nosnippet>268</a>                    next_stable = <span class="prelude-val">Some</span>((initial_t + ad + dd, stop.entity()))
-<a href=#269 id=269 data-nosnippet>269</a>                }
-<a href=#270 id=270 data-nosnippet>270</a>            }
-<a href=#271 id=271 data-nosnippet>271</a>        }
-<a href=#272 id=272 data-nosnippet>272</a>        <span class="kw">for </span>(e, <span class="kw">_</span>, <span class="kw">_</span>) <span class="kw">in </span>flexible_stack {
-<a href=#273 id=273 data-nosnippet>273</a>            commands.entity(e).remove::&lt;EntryEstimate&gt;();
-<a href=#274 id=274 data-nosnippet>274</a>        }
-<a href=#275 id=275 data-nosnippet>275</a>    }
-<a href=#276 id=276 data-nosnippet>276</a>}
+<a href=#246 id=246 data-nosnippet>246</a>            <span class="kw">let </span>total_dis_m = total_dis.<span class="number">0 </span><span class="kw">as </span>f64;
+<a href=#247 id=247 data-nosnippet>247</a>            <span class="kw">let </span>travel_dur_s = travel_dur.<span class="number">0 </span><span class="kw">as </span>f64;
+<a href=#248 id=248 data-nosnippet>248</a>            <span class="kw">let </span><span class="kw-2">mut </span>last_t_f = last_t.<span class="number">0 </span><span class="kw">as </span>f64;
+<a href=#249 id=249 data-nosnippet>249</a>            <span class="kw">while let </span>(<span class="prelude-val">Some</span>((e, <span class="kw">_</span>, dur)), <span class="prelude-val">Some</span>(dis)) = (fi.next(), di.next()) {
+<a href=#250 id=250 data-nosnippet>250</a>                <span class="kw">let </span>dis_m = dis.<span class="number">0 </span><span class="kw">as </span>f64;
+<a href=#251 id=251 data-nosnippet>251</a>                <span class="kw">let </span>travel_leg_s = <span class="kw">if </span>total_dis_m == <span class="number">0.0 </span>{
+<a href=#252 id=252 data-nosnippet>252</a>                    <span class="number">0.0
+<a href=#253 id=253 data-nosnippet>253</a>                </span>} <span class="kw">else </span>{
+<a href=#254 id=254 data-nosnippet>254</a>                    travel_dur_s * (dis_m / total_dis_m)
+<a href=#255 id=255 data-nosnippet>255</a>                };
+<a href=#256 id=256 data-nosnippet>256</a>                last_t_f += travel_leg_s;
+<a href=#257 id=257 data-nosnippet>257</a>                <span class="kw">let </span>arr = TimetableTime(last_t_f.round() <span class="kw">as </span>i32);
+<a href=#258 id=258 data-nosnippet>258</a>                commands.entity(e).insert(EntryEstimate {
+<a href=#259 id=259 data-nosnippet>259</a>                    arr,
+<a href=#260 id=260 data-nosnippet>260</a>                    dep: arr + dur,
+<a href=#261 id=261 data-nosnippet>261</a>                });
+<a href=#262 id=262 data-nosnippet>262</a>                last_t_f += dur.<span class="number">0 </span><span class="kw">as </span>f64;
+<a href=#263 id=263 data-nosnippet>263</a>            }
+<a href=#264 id=264 data-nosnippet>264</a>            <span class="kw">match </span>params {
+<a href=#265 id=265 data-nosnippet>265</a>                UnwindParams::At(<span class="kw">_</span>) =&gt; {}
+<a href=#266 id=266 data-nosnippet>266</a>                UnwindParams::ForAt(d, t) =&gt; {
+<a href=#267 id=267 data-nosnippet>267</a>                    commands.entity(entry_entity).insert(EntryEstimate {
+<a href=#268 id=268 data-nosnippet>268</a>                        arr: initial_t + d,
+<a href=#269 id=269 data-nosnippet>269</a>                        dep: t,
+<a href=#270 id=270 data-nosnippet>270</a>                    });
+<a href=#271 id=271 data-nosnippet>271</a>                }
+<a href=#272 id=272 data-nosnippet>272</a>                UnwindParams::ForFor(ad, dd) =&gt; {
+<a href=#273 id=273 data-nosnippet>273</a>                    commands.entity(entry_entity).insert(EntryEstimate {
+<a href=#274 id=274 data-nosnippet>274</a>                        arr: initial_t + ad,
+<a href=#275 id=275 data-nosnippet>275</a>                        dep: initial_t + ad + dd,
+<a href=#276 id=276 data-nosnippet>276</a>                    });
+<a href=#277 id=277 data-nosnippet>277</a>                    next_stable = <span class="prelude-val">Some</span>((initial_t + ad + dd, stop.entity()))
+<a href=#278 id=278 data-nosnippet>278</a>                }
+<a href=#279 id=279 data-nosnippet>279</a>            }
+<a href=#280 id=280 data-nosnippet>280</a>        }
+<a href=#281 id=281 data-nosnippet>281</a>        <span class="kw">for </span>(e, <span class="kw">_</span>, <span class="kw">_</span>) <span class="kw">in </span>flexible_stack {
+<a href=#282 id=282 data-nosnippet>282</a>            commands.entity(e).remove::&lt;EntryEstimate&gt;();
+<a href=#283 id=283 data-nosnippet>283</a>        }
+<a href=#284 id=284 data-nosnippet>284</a>    }
+<a href=#285 id=285 data-nosnippet>285</a>}
 </code></pre></div></section></main></body></html>
