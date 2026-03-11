@@ -20,7 +20,8 @@ jobs:
           rm -rf .github
           find . -maxdepth 1 -type f -delete
           mv main/* ./
-          rm -rf main
+          mv main-extra/* ./
+          rm -rf main main-extra
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3

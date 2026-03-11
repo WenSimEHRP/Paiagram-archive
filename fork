@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 # fork.sh: fork the current nightly
 FOLDER=$(date --iso-8601)
+# make the contents
 cp -r nightly "$FOLDER"
+# must provide an example file otherwise fail
+cp "$1" "$FOLDER/example.paia" || exit
 rm -rf "$FOLDER/api-docs"
-cp "$1" "$FOLDER/example.paia" || echo "No example file specified"
+echo "/demo /$FOLDER/?load=example.paia 302" > main-extra/_redirects
