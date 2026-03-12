@@ -6,4 +6,4 @@ cp -r nightly "$FOLDER"
 # must provide an example file otherwise fail
 cp "$1" "$FOLDER/example.paia" || exit
 rm -rf "$FOLDER/api-docs"
-echo "/demo /$FOLDER/?load=example.paia 302" > main-extra/_redirects
+echo "/demo /$FOLDER/?open=example.paia 302" > main-extra/_redirects
