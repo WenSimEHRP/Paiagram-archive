@@ -29,7 +29,7 @@
 <a href=#29 id=29 data-nosnippet>29</a>}
 <a href=#30 id=30 data-nosnippet>30</a>
 <a href=#31 id=31 data-nosnippet>31</a><span class="doccomment">/// The entry's [`TravelMode`]s.
-<a href=#32 id=32 data-nosnippet>32</a></span><span class="attr">#[derive(Default, Reflect, Component)]
+<a href=#32 id=32 data-nosnippet>32</a></span><span class="attr">#[derive(Default, Reflect, Component, Clone, Copy)]
 <a href=#33 id=33 data-nosnippet>33</a>#[reflect(Component)]
 <a href=#34 id=34 data-nosnippet>34</a></span><span class="kw">pub struct </span>EntryMode {
 <a href=#35 id=35 data-nosnippet>35</a>    <span class="kw">pub </span>arr: <span class="prelude-ty">Option</span>&lt;TravelMode&gt;,
@@ -189,13 +189,13 @@
 <a href=#189 id=189 data-nosnippet>189</a>
 <a href=#190 id=190 data-nosnippet>190</a><span class="doccomment">/// Changes the entry's mode
 <a href=#191 id=191 data-nosnippet>191</a>/// This would trigger a schedule estimate recalculation
-<a href=#192 id=192 data-nosnippet>192</a></span><span class="attr">#[derive(Debug, EntityEvent)]
+<a href=#192 id=192 data-nosnippet>192</a></span><span class="attr">#[derive(Reflect, Debug, EntityEvent, Clone, Copy)]
 <a href=#193 id=193 data-nosnippet>193</a></span><span class="kw">pub struct </span>AdjustEntryMode {
 <a href=#194 id=194 data-nosnippet>194</a>    <span class="kw">pub </span>entity: Entity,
 <a href=#195 id=195 data-nosnippet>195</a>    <span class="kw">pub </span>adj: EntryModeAdjustment,
 <a href=#196 id=196 data-nosnippet>196</a>}
 <a href=#197 id=197 data-nosnippet>197</a>
-<a href=#198 id=198 data-nosnippet>198</a><span class="attr">#[derive(Debug)]
+<a href=#198 id=198 data-nosnippet>198</a><span class="attr">#[derive(Reflect, Debug, Clone, Copy)]
 <a href=#199 id=199 data-nosnippet>199</a></span><span class="kw">pub enum </span>EntryModeAdjustment {
 <a href=#200 id=200 data-nosnippet>200</a>    SetArrival(<span class="prelude-ty">Option</span>&lt;TravelMode&gt;),
 <a href=#201 id=201 data-nosnippet>201</a>    SetDeparture(TravelMode),
@@ -211,20 +211,25 @@
 <a href=#211 id=211 data-nosnippet>211</a>    <span class="kw">let </span><span class="kw-2">mut </span>entry_mode = entry_modes
 <a href=#212 id=212 data-nosnippet>212</a>        .get_mut(event.entity)
 <a href=#213 id=213 data-nosnippet>213</a>        .expect(<span class="string">"Entity does not carry an EntryMode component"</span>);
-<a href=#214 id=214 data-nosnippet>214</a>    <span class="kw">use </span>EntryModeAdjustment::<span class="kw-2">*</span>;
-<a href=#215 id=215 data-nosnippet>215</a>    <span class="kw">match </span>event.adj {
-<a href=#216 id=216 data-nosnippet>216</a>        SetArrival(m) =&gt; {
-<a href=#217 id=217 data-nosnippet>217</a>            entry_mode.arr = m;
-<a href=#218 id=218 data-nosnippet>218</a>        }
-<a href=#219 id=219 data-nosnippet>219</a>        SetDeparture(m) =&gt; {
-<a href=#220 id=220 data-nosnippet>220</a>            entry_mode.dep = m;
-<a href=#221 id=221 data-nosnippet>221</a>        }
-<a href=#222 id=222 data-nosnippet>222</a>        ShiftArrival(d) =&gt; {
-<a href=#223 id=223 data-nosnippet>223</a>            entry_mode.shift_arr(d);
-<a href=#224 id=224 data-nosnippet>224</a>        }
-<a href=#225 id=225 data-nosnippet>225</a>        ShiftDeparture(d) =&gt; {
-<a href=#226 id=226 data-nosnippet>226</a>            entry_mode.shift_dep(d);
-<a href=#227 id=227 data-nosnippet>227</a>        }
-<a href=#228 id=228 data-nosnippet>228</a>    }
-<a href=#229 id=229 data-nosnippet>229</a>}
+<a href=#214 id=214 data-nosnippet>214</a>    <span class="kw-2">*</span>entry_mode = transform_entry_mode(<span class="kw-2">*</span>entry_mode, event.adj);
+<a href=#215 id=215 data-nosnippet>215</a>}
+<a href=#216 id=216 data-nosnippet>216</a>
+<a href=#217 id=217 data-nosnippet>217</a><span class="kw">pub fn </span>transform_entry_mode(<span class="kw-2">mut </span>old: EntryMode, adjustment: EntryModeAdjustment) -&gt; EntryMode {
+<a href=#218 id=218 data-nosnippet>218</a>    <span class="kw">use </span>EntryModeAdjustment::<span class="kw-2">*</span>;
+<a href=#219 id=219 data-nosnippet>219</a>    <span class="kw">match </span>adjustment {
+<a href=#220 id=220 data-nosnippet>220</a>        SetArrival(m) =&gt; {
+<a href=#221 id=221 data-nosnippet>221</a>            old.arr = m;
+<a href=#222 id=222 data-nosnippet>222</a>        }
+<a href=#223 id=223 data-nosnippet>223</a>        SetDeparture(m) =&gt; {
+<a href=#224 id=224 data-nosnippet>224</a>            old.dep = m;
+<a href=#225 id=225 data-nosnippet>225</a>        }
+<a href=#226 id=226 data-nosnippet>226</a>        ShiftArrival(d) =&gt; {
+<a href=#227 id=227 data-nosnippet>227</a>            old.shift_arr(d);
+<a href=#228 id=228 data-nosnippet>228</a>        }
+<a href=#229 id=229 data-nosnippet>229</a>        ShiftDeparture(d) =&gt; {
+<a href=#230 id=230 data-nosnippet>230</a>            old.shift_dep(d);
+<a href=#231 id=231 data-nosnippet>231</a>        }
+<a href=#232 id=232 data-nosnippet>232</a>    }
+<a href=#233 id=233 data-nosnippet>233</a>    old
+<a href=#234 id=234 data-nosnippet>234</a>}
 </code></pre></div></section></main></body></html>

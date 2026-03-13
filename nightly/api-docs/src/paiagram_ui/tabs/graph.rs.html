@@ -4,7 +4,7 @@
 <a href=#4 id=4 data-nosnippet>4</a>};
 <a href=#5 id=5 data-nosnippet>5</a><span class="kw">use </span>egui_i18n::tr;
 <a href=#6 id=6 data-nosnippet>6</a><span class="kw">use </span>moonshine_core::prelude::MapEntities;
-<a href=#7 id=7 data-nosnippet>7</a><span class="kw">use </span>paiagram_core::graph::{AddIntervalPair, NodePos};
+<a href=#7 id=7 data-nosnippet>7</a><span class="kw">use </span>paiagram_core::graph::{AddIntervalPair, NodeCoor};
 <a href=#8 id=8 data-nosnippet>8</a><span class="kw">use </span>paiagram_core::station::CreateNewStation;
 <a href=#9 id=9 data-nosnippet>9</a><span class="kw">use </span>paiagram_core::units::distance::Distance;
 <a href=#10 id=10 data-nosnippet>10</a><span class="kw">use </span>serde::{Deserialize, Serialize};
@@ -300,7 +300,7 @@
 <a href=#300 id=300 data-nosnippet>300</a>        </span>&amp;&amp; <span class="kw">let </span><span class="prelude-val">Some</span>(hover_pos) = ui.input(|r| r.pointer.hover_pos())
 <a href=#301 id=301 data-nosnippet>301</a>    {
 <a href=#302 id=302 data-nosnippet>302</a>        <span class="kw">let </span>entity = stations[<span class="number">0</span>].station;
-<a href=#303 id=303 data-nosnippet>303</a>        <span class="kw">let </span>(x, y) = world.get::&lt;Node&gt;(entity).unwrap().pos.to_xy();
+<a href=#303 id=303 data-nosnippet>303</a>        <span class="kw">let </span>(x, y) = world.get::&lt;Node&gt;(entity).unwrap().coor.to_xy();
 <a href=#304 id=304 data-nosnippet>304</a>        <span class="kw">let </span>pos = tab.navi.xy_to_screen_pos(x, y);
 <a href=#305 id=305 data-nosnippet>305</a>        ui.painter()
 <a href=#306 id=306 data-nosnippet>306</a>            .line_segment([pos, hover_pos], Stroke::new(<span class="number">1.0</span>, Color32::BLUE));
@@ -308,7 +308,7 @@
 <a href=#308 id=308 data-nosnippet>308</a>    <span class="kw">let </span>selected_items = world.resource::&lt;SelectedItems&gt;();
 <a href=#309 id=309 data-nosnippet>309</a>    <span class="kw">if let </span>SelectedItems::Stations(stations) = selected_items {
 <a href=#310 id=310 data-nosnippet>310</a>        <span class="kw">for </span>station <span class="kw">in </span>stations.clone().iter() {
-<a href=#311 id=311 data-nosnippet>311</a>            <span class="kw">let </span>coor = world.get::&lt;Node&gt;(station.station).unwrap().pos;
+<a href=#311 id=311 data-nosnippet>311</a>            <span class="kw">let </span>coor = world.get::&lt;Node&gt;(station.station).unwrap().coor;
 <a href=#312 id=312 data-nosnippet>312</a>            <span class="kw">let </span>(x, y) = coor.to_xy();
 <a href=#313 id=313 data-nosnippet>313</a>            <span class="kw">let </span>pos = tab.navi.xy_to_screen_pos(x, y);
 <a href=#314 id=314 data-nosnippet>314</a>            <span class="kw">let </span>rect = Rect::from_pos(pos).expand(<span class="number">8.0</span>);
@@ -323,8 +323,8 @@
 <a href=#323 id=323 data-nosnippet>323</a>                ui.ctx().set_cursor_icon(egui::CursorIcon::Grabbing);
 <a href=#324 id=324 data-nosnippet>324</a>                <span class="kw">let </span>new_pos = pos + res.drag_delta();
 <a href=#325 id=325 data-nosnippet>325</a>                <span class="kw">let </span>(x, y) = tab.navi.screen_pos_to_xy(new_pos);
-<a href=#326 id=326 data-nosnippet>326</a>                <span class="kw">let </span>new_coor = NodePos::from_xy(x, y);
-<a href=#327 id=327 data-nosnippet>327</a>                world.get_mut::&lt;Node&gt;(station.station).unwrap().pos = new_coor;
+<a href=#326 id=326 data-nosnippet>326</a>                <span class="kw">let </span>new_coor = NodeCoor::from_xy(x, y);
+<a href=#327 id=327 data-nosnippet>327</a>                world.get_mut::&lt;Node&gt;(station.station).unwrap().coor = new_coor;
 <a href=#328 id=328 data-nosnippet>328</a>            }
 <a href=#329 id=329 data-nosnippet>329</a>            <span class="kw">let </span>inner = |ui: <span class="kw-2">&amp;mut </span>Ui| {
 <a href=#330 id=330 data-nosnippet>330</a>                ui.set_width(<span class="number">150.0</span>);
@@ -387,7 +387,7 @@
 <a href=#387 id=387 data-nosnippet>387</a>        <span class="kw">let </span>inner = |ui: <span class="kw-2">&amp;mut </span>Ui| {
 <a href=#388 id=388 data-nosnippet>388</a>            ui.set_width(<span class="number">200.0</span>);
 <a href=#389 id=389 data-nosnippet>389</a>            ui.text_edit_singleline(<span class="kw-2">&amp;mut </span>tab.new_station_name);
-<a href=#390 id=390 data-nosnippet>390</a>            <span class="kw">let </span>coor = NodePos::from_xy(x, y);
+<a href=#390 id=390 data-nosnippet>390</a>            <span class="kw">let </span>coor = NodeCoor::from_xy(x, y);
 <a href=#391 id=391 data-nosnippet>391</a>            <span class="kw">if </span>ui.button(<span class="string">"New Station"</span>).clicked() {
 <a href=#392 id=392 data-nosnippet>392</a>                tab.clicked_coor = <span class="prelude-val">None</span>;
 <a href=#393 id=393 data-nosnippet>393</a>                <span class="kw">let </span>name = <span class="kw">if </span>tab.new_station_name.is_empty() {
@@ -395,7 +395,7 @@
 <a href=#395 id=395 data-nosnippet>395</a>                </span>} <span class="kw">else </span>{
 <a href=#396 id=396 data-nosnippet>396</a>                    <span class="prelude-val">Some</span>(tab.new_station_name.clone())
 <a href=#397 id=397 data-nosnippet>397</a>                };
-<a href=#398 id=398 data-nosnippet>398</a>                world.trigger(CreateNewStation { name, pos: coor });
+<a href=#398 id=398 data-nosnippet>398</a>                world.trigger(CreateNewStation { name, coor });
 <a href=#399 id=399 data-nosnippet>399</a>                tab.new_station_name.clear();
 <a href=#400 id=400 data-nosnippet>400</a>            }
 <a href=#401 id=401 data-nosnippet>401</a>            ui.small(coor.to_string());
@@ -583,7 +583,7 @@
 <a href=#583 id=583 data-nosnippet>583</a>        <span class="kw">let </span><span class="prelude-val">Ok</span>((<span class="kw">_</span>, node, name)) = nodes.get(entity) <span class="kw">else </span>{
 <a href=#584 id=584 data-nosnippet>584</a>            <span class="kw">continue</span>;
 <a href=#585 id=585 data-nosnippet>585</a>        };
-<a href=#586 id=586 data-nosnippet>586</a>        <span class="kw">let </span>[x, y] = node.pos.to_xy_arr();
+<a href=#586 id=586 data-nosnippet>586</a>        <span class="kw">let </span>[x, y] = node.coor.to_xy_arr();
 <a href=#587 id=587 data-nosnippet>587</a>        <span class="kw">let </span>pos = navi.xy_to_screen_pos(x, y);
 <a href=#588 id=588 data-nosnippet>588</a>
 <a href=#589 id=589 data-nosnippet>589</a>        <span class="kw">if let </span><span class="prelude-val">Some</span>(interact_pos) = maybe_interact_pos

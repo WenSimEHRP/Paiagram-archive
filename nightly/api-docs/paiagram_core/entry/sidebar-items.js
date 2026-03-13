@@ -1,1 +1,1 @@
-window.SIDEBAR_ITEMS = {"enum":["EntryModeAdjustment","TravelMode"],"struct":["AdjustEntryMode","ChangeEntryStop","DerivedEntryBundle","EntryBundle","EntryEstimate","EntryMode","EntryPlugin","EntryQuery","EntryQueryItem","EntryStop","IsDerivedEntry"]};
+window.SIDEBAR_ITEMS = {"enum":["EntryModeAdjustment","TravelMode"],"fn":["transform_entry_mode"],"struct":["AdjustEntryMode","ChangeEntryStop","DerivedEntryBundle","EntryBundle","EntryEstimate","EntryMode","EntryPlugin","EntryQuery","EntryQueryItem","EntryStop","IsDerivedEntry"]};

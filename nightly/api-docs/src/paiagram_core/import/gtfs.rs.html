@@ -6,7 +6,7 @@
 <a href=#6 id=6 data-nosnippet>6</a><span class="kw">use </span>crate::{
 <a href=#7 id=7 data-nosnippet>7</a>    colors::{DisplayColor, PredefinedColor},
 <a href=#8 id=8 data-nosnippet>8</a>    entry::{EntryBundle, TravelMode},
-<a href=#9 id=9 data-nosnippet>9</a>    graph::{Graph, Node, NodePos},
+<a href=#9 id=9 data-nosnippet>9</a>    graph::{Graph, Node, NodeCoor},
 <a href=#10 id=10 data-nosnippet>10</a>    route::Route,
 <a href=#11 id=11 data-nosnippet>11</a>    station::{Platform, Station},
 <a href=#12 id=12 data-nosnippet>12</a>    trip::{
@@ -151,11 +151,11 @@
 <a href=#151 id=151 data-nosnippet>151</a>
 <a href=#152 id=152 data-nosnippet>152</a>            <span class="kw">if let </span>(<span class="prelude-val">Some</span>(lat), <span class="prelude-val">Some</span>(lon)) = (stop.latitude, stop.longitude) {
 <a href=#153 id=153 data-nosnippet>153</a>                commands.entity(platform_entity).insert(Node {
-<a href=#154 id=154 data-nosnippet>154</a>                    pos: NodePos::new(lon, lat),
+<a href=#154 id=154 data-nosnippet>154</a>                    coor: NodeCoor::new(lon, lat),
 <a href=#155 id=155 data-nosnippet>155</a>                });
 <a href=#156 id=156 data-nosnippet>156</a>                <span class="kw">if </span><span class="macro">platform_entity !</span>= station_entity {
 <a href=#157 id=157 data-nosnippet>157</a>                    commands.entity(station_entity).insert(Node {
-<a href=#158 id=158 data-nosnippet>158</a>                        pos: NodePos::new(lon, lat),
+<a href=#158 id=158 data-nosnippet>158</a>                        coor: NodeCoor::new(lon, lat),
 <a href=#159 id=159 data-nosnippet>159</a>                    });
 <a href=#160 id=160 data-nosnippet>160</a>                }
 <a href=#161 id=161 data-nosnippet>161</a>            }
@@ -252,7 +252,7 @@
 <a href=#252 id=252 data-nosnippet>252</a>
 <a href=#253 id=253 data-nosnippet>253</a>            <span class="kw">if let </span>(<span class="prelude-val">Some</span>(lat), <span class="prelude-val">Some</span>(lon)) = (stop.latitude, stop.longitude) {
 <a href=#254 id=254 data-nosnippet>254</a>                commands.entity(stop_entity).insert(Node {
-<a href=#255 id=255 data-nosnippet>255</a>                    pos: NodePos::new(lon, lat),
+<a href=#255 id=255 data-nosnippet>255</a>                    coor: NodeCoor::new(lon, lat),
 <a href=#256 id=256 data-nosnippet>256</a>                });
 <a href=#257 id=257 data-nosnippet>257</a>            }
 <a href=#258 id=258 data-nosnippet>258</a>

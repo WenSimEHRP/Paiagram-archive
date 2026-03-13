@@ -9,7 +9,7 @@
 <a href=#9 id=9 data-nosnippet>9</a>};
 <a href=#10 id=10 data-nosnippet>10</a><span class="kw">use </span>visgraph::layout::force_directed::force_directed_layout;
 <a href=#11 id=11 data-nosnippet>11</a>
-<a href=#12 id=12 data-nosnippet>12</a><span class="kw">use </span>super::{Graph, Node, NodePos};
+<a href=#12 id=12 data-nosnippet>12</a><span class="kw">use </span>super::{Graph, Node, NodeCoor};
 <a href=#13 id=13 data-nosnippet>13</a>
 <a href=#14 id=14 data-nosnippet>14</a><span class="attr">#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 <a href=#15 id=15 data-nosnippet>15</a></span><span class="kw">pub enum </span>GraphLayoutKind {
@@ -19,7 +19,7 @@
 <a href=#19 id=19 data-nosnippet>19</a>
 <a href=#20 id=20 data-nosnippet>20</a><span class="attr">#[derive(Resource)]
 <a href=#21 id=21 data-nosnippet>21</a></span><span class="kw">pub struct </span>GraphLayoutTask {
-<a href=#22 id=22 data-nosnippet>22</a>    <span class="kw">pub </span>task: Task&lt;Vec&lt;(Entity, NodePos)&gt;&gt;,
+<a href=#22 id=22 data-nosnippet>22</a>    <span class="kw">pub </span>task: Task&lt;Vec&lt;(Entity, NodeCoor)&gt;&gt;,
 <a href=#23 id=23 data-nosnippet>23</a>    finished: Arc&lt;AtomicUsize&gt;,
 <a href=#24 id=24 data-nosnippet>24</a>    queued_for_retry: Arc&lt;AtomicUsize&gt;,
 <a href=#25 id=25 data-nosnippet>25</a>    <span class="kw">pub </span>total: usize,
@@ -28,7 +28,7 @@
 <a href=#28 id=28 data-nosnippet>28</a>
 <a href=#29 id=29 data-nosnippet>29</a><span class="kw">impl </span>GraphLayoutTask {
 <a href=#30 id=30 data-nosnippet>30</a>    <span class="kw">fn </span>new(
-<a href=#31 id=31 data-nosnippet>31</a>        task: Task&lt;Vec&lt;(Entity, NodePos)&gt;&gt;,
+<a href=#31 id=31 data-nosnippet>31</a>        task: Task&lt;Vec&lt;(Entity, NodeCoor)&gt;&gt;,
 <a href=#32 id=32 data-nosnippet>32</a>        finished: Arc&lt;AtomicUsize&gt;,
 <a href=#33 id=33 data-nosnippet>33</a>        queued_for_retry: Arc&lt;AtomicUsize&gt;,
 <a href=#34 id=34 data-nosnippet>34</a>        total: usize,
@@ -63,11 +63,11 @@
 <a href=#63 id=63 data-nosnippet>63</a>    <span class="kw">let </span><span class="prelude-val">Some</span>(found) = block_on(poll_once(<span class="kw-2">&amp;mut </span>task.task)) <span class="kw">else </span>{
 <a href=#64 id=64 data-nosnippet>64</a>        <span class="kw">return</span>;
 <a href=#65 id=65 data-nosnippet>65</a>    };
-<a href=#66 id=66 data-nosnippet>66</a>    <span class="kw">for </span>(entity, pos) <span class="kw">in </span>found {
+<a href=#66 id=66 data-nosnippet>66</a>    <span class="kw">for </span>(entity, coor) <span class="kw">in </span>found {
 <a href=#67 id=67 data-nosnippet>67</a>        <span class="kw">let </span><span class="prelude-val">Ok</span>(<span class="kw-2">mut </span>node) = nodes.get_mut(entity) <span class="kw">else </span>{
 <a href=#68 id=68 data-nosnippet>68</a>            <span class="kw">continue</span>;
 <a href=#69 id=69 data-nosnippet>69</a>        };
-<a href=#70 id=70 data-nosnippet>70</a>        node.pos = pos;
+<a href=#70 id=70 data-nosnippet>70</a>        node.coor = coor;
 <a href=#71 id=71 data-nosnippet>71</a>    }
 <a href=#72 id=72 data-nosnippet>72</a>    <span class="kw">let </span>(finished, total, queued_for_retry) = task.progress();
 <a href=#73 id=73 data-nosnippet>73</a>    <span class="macro">info!</span>(
@@ -94,11 +94,11 @@
 <a href=#94 id=94 data-nosnippet>94</a>        <span class="kw">let </span><span class="prelude-val">Some</span>(<span class="kw-2">&amp;</span>idx) = entity_map.get(<span class="kw-2">&amp;</span>node_entity) <span class="kw">else </span>{
 <a href=#95 id=95 data-nosnippet>95</a>            <span class="kw">continue</span>;
 <a href=#96 id=96 data-nosnippet>96</a>        };
-<a href=#97 id=97 data-nosnippet>97</a>        <span class="kw">let </span><span class="prelude-val">Ok</span>(<span class="kw-2">mut </span>pos) = nodes.get_mut(node_entity) <span class="kw">else </span>{
+<a href=#97 id=97 data-nosnippet>97</a>        <span class="kw">let </span><span class="prelude-val">Ok</span>(<span class="kw-2">mut </span>node) = nodes.get_mut(node_entity) <span class="kw">else </span>{
 <a href=#98 id=98 data-nosnippet>98</a>            <span class="kw">continue</span>;
 <a href=#99 id=99 data-nosnippet>99</a>        };
 <a href=#100 id=100 data-nosnippet>100</a>        <span class="kw">let </span>(nx, ny) = layout(idx);
-<a href=#101 id=101 data-nosnippet>101</a>        pos.pos = NodePos::from_xy(nx <span class="kw">as </span>f64, ny <span class="kw">as </span>f64);
+<a href=#101 id=101 data-nosnippet>101</a>        node.coor = NodeCoor::from_xy(nx <span class="kw">as </span>f64, ny <span class="kw">as </span>f64);
 <a href=#102 id=102 data-nosnippet>102</a>    }
 <a href=#103 id=103 data-nosnippet>103</a>}
 <a href=#104 id=104 data-nosnippet>104</a>
@@ -121,13 +121,13 @@
 <a href=#121 id=121 data-nosnippet>121</a>    <span class="kw">let </span>task = AsyncComputeTaskPool::get().spawn(<span class="kw">async move </span>{
 <a href=#122 id=122 data-nosnippet>122</a>        <span class="kw">let </span>binding = <span class="kw-2">&amp;</span>graph;
 <a href=#123 id=123 data-nosnippet>123</a>        <span class="kw">let </span>layout = force_directed_layout(<span class="kw-2">&amp;</span>binding, iterations, <span class="number">0.1</span>);
-<a href=#124 id=124 data-nosnippet>124</a>        <span class="kw">let </span>out: Vec&lt;(Entity, NodePos)&gt; = graph
+<a href=#124 id=124 data-nosnippet>124</a>        <span class="kw">let </span>out: Vec&lt;(Entity, NodeCoor)&gt; = graph
 <a href=#125 id=125 data-nosnippet>125</a>            .node_indices()
 <a href=#126 id=126 data-nosnippet>126</a>            .map(|idx| {
 <a href=#127 id=127 data-nosnippet>127</a>                <span class="kw">let </span>(x, y) = layout(idx);
 <a href=#128 id=128 data-nosnippet>128</a>                (
 <a href=#129 id=129 data-nosnippet>129</a>                    <span class="kw-2">*</span>graph.node_weight(idx).unwrap(),
-<a href=#130 id=130 data-nosnippet>130</a>                    NodePos::from_xy(x <span class="kw">as </span>f64 * <span class="number">10000.0</span>, y <span class="kw">as </span>f64 * <span class="number">10000.0</span>),
+<a href=#130 id=130 data-nosnippet>130</a>                    NodeCoor::from_xy(x <span class="kw">as </span>f64 * <span class="number">10000.0</span>, y <span class="kw">as </span>f64 * <span class="number">10000.0</span>),
 <a href=#131 id=131 data-nosnippet>131</a>                )
 <a href=#132 id=132 data-nosnippet>132</a>            })
 <a href=#133 id=133 data-nosnippet>133</a>            .collect();
@@ -166,10 +166,10 @@
 <a href=#166 id=166 data-nosnippet>166</a>}
 <a href=#167 id=167 data-nosnippet>167</a>
 <a href=#168 id=168 data-nosnippet>168</a><span class="kw">impl </span>OSMElement {
-<a href=#169 id=169 data-nosnippet>169</a>    <span class="kw">fn </span>pos(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;NodePos&gt; {
+<a href=#169 id=169 data-nosnippet>169</a>    <span class="kw">fn </span>coor(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;NodeCoor&gt; {
 <a href=#170 id=170 data-nosnippet>170</a>        <span class="kw">match </span>(<span class="self">self</span>.lon, <span class="self">self</span>.lat, <span class="self">self</span>.center.as_ref()) {
-<a href=#171 id=171 data-nosnippet>171</a>            (<span class="prelude-val">Some</span>(lon), <span class="prelude-val">Some</span>(lat), <span class="kw">_</span>) =&gt; <span class="prelude-val">Some</span>(NodePos::new(lon, lat)),
-<a href=#172 id=172 data-nosnippet>172</a>            (<span class="kw">_</span>, <span class="kw">_</span>, <span class="prelude-val">Some</span>(center)) =&gt; <span class="prelude-val">Some</span>(NodePos::new(center.lon, center.lat)),
+<a href=#171 id=171 data-nosnippet>171</a>            (<span class="prelude-val">Some</span>(lon), <span class="prelude-val">Some</span>(lat), <span class="kw">_</span>) =&gt; <span class="prelude-val">Some</span>(NodeCoor::new(lon, lat)),
+<a href=#172 id=172 data-nosnippet>172</a>            (<span class="kw">_</span>, <span class="kw">_</span>, <span class="prelude-val">Some</span>(center)) =&gt; <span class="prelude-val">Some</span>(NodeCoor::new(center.lon, center.lat)),
 <a href=#173 id=173 data-nosnippet>173</a>            <span class="kw">_ </span>=&gt; <span class="prelude-val">None</span>,
 <a href=#174 id=174 data-nosnippet>174</a>        }
 <a href=#175 id=175 data-nosnippet>175</a>    }
@@ -238,7 +238,7 @@
 <a href=#238 id=238 data-nosnippet>238</a><span class="kw">fn </span>best_name_match&lt;<span class="lifetime">'a</span>&gt;(elements: <span class="kw-2">&amp;</span><span class="lifetime">'a </span>[OSMElement], station_name: <span class="kw-2">&amp;</span>str) -&gt; <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="lifetime">'a </span>OSMElement&gt; {
 <a href=#239 id=239 data-nosnippet>239</a>    <span class="kw">let </span><span class="kw-2">mut </span>best: <span class="prelude-ty">Option</span>&lt;(<span class="kw-2">&amp;</span>OSMElement, f64)&gt; = <span class="prelude-val">None</span>;
 <a href=#240 id=240 data-nosnippet>240</a>    <span class="kw">for </span>element <span class="kw">in </span>elements {
-<a href=#241 id=241 data-nosnippet>241</a>        <span class="kw">if </span>element.pos().is_none() {
+<a href=#241 id=241 data-nosnippet>241</a>        <span class="kw">if </span>element.coor().is_none() {
 <a href=#242 id=242 data-nosnippet>242</a>            <span class="kw">continue</span>;
 <a href=#243 id=243 data-nosnippet>243</a>        }
 <a href=#244 id=244 data-nosnippet>244</a>        <span class="kw">let </span>base_weight = station_kind_weight(<span class="kw-2">&amp;</span>element.tags);
@@ -271,7 +271,7 @@
 <a href=#271 id=271 data-nosnippet>271</a>
 <a href=#272 id=272 data-nosnippet>272</a><span class="kw">fn </span>fill_unmatched_via_neighbors(
 <a href=#273 id=273 data-nosnippet>273</a>    graph: <span class="kw-2">&amp;</span>petgraph::Graph&lt;Entity, Entity, petgraph::Directed, usize&gt;,
-<a href=#274 id=274 data-nosnippet>274</a>    known_positions: <span class="kw-2">&amp;mut </span>HashMap&lt;Entity, NodePos&gt;,
+<a href=#274 id=274 data-nosnippet>274</a>    known_positions: <span class="kw-2">&amp;mut </span>HashMap&lt;Entity, NodeCoor&gt;,
 <a href=#275 id=275 data-nosnippet>275</a>    all_stations: <span class="kw-2">&amp;</span>[Entity],
 <a href=#276 id=276 data-nosnippet>276</a>) -&gt; usize {
 <a href=#277 id=277 data-nosnippet>277</a>    <span class="kw">let </span>entity_to_index: HashMap&lt;Entity, NodeIndex&lt;usize&gt;&gt; = graph
@@ -301,8 +301,8 @@
 <a href=#301 id=301 data-nosnippet>301</a>                    <span class="kw">continue</span>;
 <a href=#302 id=302 data-nosnippet>302</a>                }
 <a href=#303 id=303 data-nosnippet>303</a>                <span class="kw">let </span>neighbor_entity = <span class="kw-2">*</span>graph.node_weight(neighbor).unwrap();
-<a href=#304 id=304 data-nosnippet>304</a>                <span class="kw">if let </span><span class="prelude-val">Some</span>(pos) = known_positions.get(<span class="kw-2">&amp;</span>neighbor_entity) {
-<a href=#305 id=305 data-nosnippet>305</a>                    found_neighbor_positions.push(<span class="kw-2">*</span>pos);
+<a href=#304 id=304 data-nosnippet>304</a>                <span class="kw">if let </span><span class="prelude-val">Some</span>(coor) = known_positions.get(<span class="kw-2">&amp;</span>neighbor_entity) {
+<a href=#305 id=305 data-nosnippet>305</a>                    found_neighbor_positions.push(<span class="kw-2">*</span>coor);
 <a href=#306 id=306 data-nosnippet>306</a>                } <span class="kw">else </span>{
 <a href=#307 id=307 data-nosnippet>307</a>                    queue.push_back(neighbor);
 <a href=#308 id=308 data-nosnippet>308</a>                }
@@ -316,7 +316,7 @@
 <a href=#316 id=316 data-nosnippet>316</a>        <span class="kw">let </span>count = found_neighbor_positions.len() <span class="kw">as </span>f64;
 <a href=#317 id=317 data-nosnippet>317</a>        <span class="kw">let </span>avg_lon = found_neighbor_positions.iter().map(|p| p.lon).sum::&lt;f64&gt;() / count;
 <a href=#318 id=318 data-nosnippet>318</a>        <span class="kw">let </span>avg_lat = found_neighbor_positions.iter().map(|p| p.lat).sum::&lt;f64&gt;() / count;
-<a href=#319 id=319 data-nosnippet>319</a>        known_positions.insert(station, NodePos::new(avg_lon, avg_lat));
+<a href=#319 id=319 data-nosnippet>319</a>        known_positions.insert(station, NodeCoor::new(avg_lon, avg_lat));
 <a href=#320 id=320 data-nosnippet>320</a>        fallback_count += <span class="number">1</span>;
 <a href=#321 id=321 data-nosnippet>321</a>    }
 <a href=#322 id=322 data-nosnippet>322</a>
@@ -380,7 +380,7 @@
 <a href=#380 id=380 data-nosnippet>380</a>    };
 <a href=#381 id=381 data-nosnippet>381</a>
 <a href=#382 id=382 data-nosnippet>382</a>    <span class="kw">let </span>task = AsyncComputeTaskPool::get().spawn(<span class="kw">async move </span>{
-<a href=#383 id=383 data-nosnippet>383</a>        <span class="kw">let </span><span class="kw-2">mut </span>known_positions: HashMap&lt;Entity, NodePos&gt; = HashMap::new();
+<a href=#383 id=383 data-nosnippet>383</a>        <span class="kw">let </span><span class="kw-2">mut </span>known_positions: HashMap&lt;Entity, NodeCoor&gt; = HashMap::new();
 <a href=#384 id=384 data-nosnippet>384</a>
 <a href=#385 id=385 data-nosnippet>385</a>        <span class="kw">while let </span><span class="prelude-val">Some</span>((chunk, retry_count)) = task_queue.pop_front() {
 <a href=#386 id=386 data-nosnippet>386</a>            <span class="kw">if </span>retry_count &gt;= MAX_RETRY_COUNT {
@@ -477,8 +477,8 @@
 <a href=#477 id=477 data-nosnippet>477</a>            <span class="kw">let </span><span class="kw-2">mut </span>matched_count = <span class="number">0usize</span>;
 <a href=#478 id=478 data-nosnippet>478</a>            <span class="kw">for </span>(entity, name) <span class="kw">in </span>chunk {
 <a href=#479 id=479 data-nosnippet>479</a>                <span class="kw">if let </span><span class="prelude-val">Some</span>(element) = best_name_match(<span class="kw-2">&amp;</span>osm_data.elements, <span class="kw-2">&amp;</span>name) {
-<a href=#480 id=480 data-nosnippet>480</a>                    <span class="kw">if let </span><span class="prelude-val">Some</span>(pos) = element.pos() {
-<a href=#481 id=481 data-nosnippet>481</a>                        known_positions.insert(entity, pos);
+<a href=#480 id=480 data-nosnippet>480</a>                    <span class="kw">if let </span><span class="prelude-val">Some</span>(coor) = element.coor() {
+<a href=#481 id=481 data-nosnippet>481</a>                        known_positions.insert(entity, coor);
 <a href=#482 id=482 data-nosnippet>482</a>                        matched_count += <span class="number">1</span>;
 <a href=#483 id=483 data-nosnippet>483</a>                    }
 <a href=#484 id=484 data-nosnippet>484</a>                }
