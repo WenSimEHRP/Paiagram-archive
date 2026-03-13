@@ -900,12 +900,12 @@
 <a href=#900 id=900 data-nosnippet>900</a>                            callback: paiagram_rw::save::add_load_candidate_compressed_cbor,
 <a href=#901 id=901 data-nosnippet>901</a>                        });
 <a href=#902 id=902 data-nosnippet>902</a>                    }
-<a href=#903 id=903 data-nosnippet>903</a>                    <span class="attr">#[cfg(debug_assertions)]
-<a href=#904 id=904 data-nosnippet>904</a>                    </span>{
-<a href=#905 id=905 data-nosnippet>905</a>                        <span class="kw">if </span>ui.button(<span class="string">"Save RON..."</span>).clicked() {
+<a href=#903 id=903 data-nosnippet>903</a>                    <span class="kw">let </span>developer_mode = world.resource_mut::&lt;UserPreferences&gt;().developer_mode;
+<a href=#904 id=904 data-nosnippet>904</a>                    {
+<a href=#905 id=905 data-nosnippet>905</a>                        <span class="kw">if </span>developer_mode &amp;&amp; ui.button(<span class="string">"Save RON..."</span>).clicked() {
 <a href=#906 id=906 data-nosnippet>906</a>                            save::save_ron(world, <span class="string">"saved.ron"</span>.to_string());
 <a href=#907 id=907 data-nosnippet>907</a>                        }
-<a href=#908 id=908 data-nosnippet>908</a>                        <span class="kw">if </span>ui.button(<span class="string">"Read RON..."</span>).clicked() {
+<a href=#908 id=908 data-nosnippet>908</a>                        <span class="kw">if </span>developer_mode &amp;&amp; ui.button(<span class="string">"Read RON..."</span>).clicked() {
 <a href=#909 id=909 data-nosnippet>909</a>                            world.commands().trigger(paiagram_rw::read::ReadFile {
 <a href=#910 id=910 data-nosnippet>910</a>                                title: <span class="string">"Load RON Files"</span>.to_string(),
 <a href=#911 id=911 data-nosnippet>911</a>                                extensions: <span class="macro">vec!</span>[(
