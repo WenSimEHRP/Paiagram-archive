@@ -371,7 +371,7 @@
 <a href=#371 id=371 data-nosnippet>371</a>        timer.animation_speed = <span class="number">1.0</span>;
 <a href=#372 id=372 data-nosnippet>372</a>        timer.animation_playing = <span class="bool-val">true</span>;
 <a href=#373 id=373 data-nosnippet>373</a>        timer.write_seconds(seconds + rest);
-<a href=#374 id=374 data-nosnippet>374</a>    } <span class="kw">else if </span>!timer.is_locked() {
+<a href=#374 id=374 data-nosnippet>374</a>    } <span class="kw">else if </span>timer.animation_playing &amp;&amp; !timer.is_locked() {
 <a href=#375 id=375 data-nosnippet>375</a>        <span class="kw">let </span><span class="kw-2">mut </span>seconds = timer.read_seconds();
 <a href=#376 id=376 data-nosnippet>376</a>        seconds += timer.animation_speed * time.delta_secs_f64();
 <a href=#377 id=377 data-nosnippet>377</a>        timer.write_seconds(seconds);
