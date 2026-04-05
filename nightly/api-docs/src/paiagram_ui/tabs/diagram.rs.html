@@ -642,7 +642,7 @@
 <a href=#642 id=642 data-nosnippet>642</a>        <span class="kw">let </span>stroke = stroke.egui_stroke(ui.visuals().dark_mode);
 <a href=#643 id=643 data-nosnippet>643</a>        <span class="kw">for </span>idx <span class="kw">in </span><span class="number">0</span>..repeat_count {
 <a href=#644 id=644 data-nosnippet>644</a>            <span class="kw">let </span>state_trip = <span class="kw-2">&amp;mut </span>state.trips[idx + processed];
-<a href=#645 id=645 data-nosnippet>645</a>            state_trip.color = stroke.color.to_normalized_gamma_f32();
+<a href=#645 id=645 data-nosnippet>645</a>            state_trip.color = stroke.color.to_array();
 <a href=#646 id=646 data-nosnippet>646</a>            state_trip.width = stroke.width;
 <a href=#647 id=647 data-nosnippet>647</a>        }
 <a href=#648 id=648 data-nosnippet>648</a>        processed += repeat_count;

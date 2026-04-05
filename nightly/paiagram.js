@@ -2953,12 +2953,12 @@ function __wbg_get_imports() {
         },
         __wbindgen_cast_0000000000000006: function(arg0, arg1) {
             // Cast intrinsic for `Closure(Closure { dtor_idx: 4605, function: Function { arguments: [Externref], shim_idx: 3717, ret: Result(Unit), inner_ret: Some(Result(Unit)) }, mutable: true }) -> Externref`.
-            const ret = makeMutClosure(arg0, arg1, wasm.__wasm_bindgen_func_elem_48206, __wasm_bindgen_func_elem_35886);
+            const ret = makeMutClosure(arg0, arg1, wasm.__wasm_bindgen_func_elem_48205, __wasm_bindgen_func_elem_35886);
             return addHeapObject(ret);
         },
         __wbindgen_cast_0000000000000007: function(arg0, arg1) {
             // Cast intrinsic for `Closure(Closure { dtor_idx: 4605, function: Function { arguments: [], shim_idx: 201, ret: Unit, inner_ret: Some(Unit) }, mutable: true }) -> Externref`.
-            const ret = makeMutClosure(arg0, arg1, wasm.__wasm_bindgen_func_elem_48206, __wasm_bindgen_func_elem_1771);
+            const ret = makeMutClosure(arg0, arg1, wasm.__wasm_bindgen_func_elem_48205, __wasm_bindgen_func_elem_1771);
             return addHeapObject(ret);
         },
         __wbindgen_cast_0000000000000008: function(arg0) {
