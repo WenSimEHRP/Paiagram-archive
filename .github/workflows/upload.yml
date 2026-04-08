@@ -23,6 +23,7 @@ jobs:
       - name: Snapshot nightly archive (retain 7)
         run: |
           set -euo pipefail
+          RETENTION_COUNT=7
 
           # ISO 8601 basic UTC format (YYYYMMDDTHHMMSSZ) sorts correctly lexicographically.
           list_snapshots() {
@@ -51,8 +52,8 @@ jobs:
           fi
 
           mapfile -t snapshot_dirs < <(list_snapshots)
-          if (( ${#snapshot_dirs[@]} > 7 )); then
-            for old_snapshot in "${snapshot_dirs[@]:7}"; do
+          if (( ${#snapshot_dirs[@]} > RETENTION_COUNT )); then
+            for old_snapshot in "${snapshot_dirs[@]:RETENTION_COUNT}"; do
               rm -rf "${old_snapshot}"
               echo "Removed old snapshot ${old_snapshot}."
             done
@@ -78,7 +79,7 @@ jobs:
               exit 1
             fi
             git fetch origin main
-            git rebase origin/main
+            git rebase origin/main || { echo "Rebase failed."; exit 1; }
           done
 
       - run: |
