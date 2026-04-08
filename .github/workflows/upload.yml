@@ -6,6 +6,10 @@ on:
       - main
   workflow_dispatch:
 
+concurrency:
+  group: upload-main
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
@@ -34,7 +38,7 @@ jobs:
           fi
 
           if [[ "${current_revision}" != "${latest_revision}" ]]; then
-            snapshot_dir="snapshot_$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            snapshot_dir="snapshot_$(date -u +%Y%m%dT%H%M%SZ)"
             cp -a nightly "${snapshot_dir}"
             echo "Created ${snapshot_dir} for revision ${current_revision}."
           else
