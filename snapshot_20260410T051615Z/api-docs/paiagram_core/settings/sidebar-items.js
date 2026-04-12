@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["AntialiasingMode","TripRenderMode"],"struct":["ProjectSettings","SettingsPlugin","UserPreferences"]};
