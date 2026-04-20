@@ -13,12 +13,12 @@
 <a href=#13 id=13 data-nosnippet>13</a>        time::{Duration, TimetableTime},
 <a href=#14 id=14 data-nosnippet>14</a>    },
 <a href=#15 id=15 data-nosnippet>15</a>};
-<a href=#16 id=16 data-nosnippet>16</a><span class="kw">use </span>anyhow::{<span class="prelude-ty">Result</span>, anyhow};
-<a href=#17 id=17 data-nosnippet>17</a><span class="kw">use </span>bevy::{
-<a href=#18 id=18 data-nosnippet>18</a>    platform::collections::HashMap,
-<a href=#19 id=19 data-nosnippet>19</a>    prelude::<span class="kw-2">*</span>,
-<a href=#20 id=20 data-nosnippet>20</a>    tasks::{AsyncComputeTaskPool, Task, block_on, futures_lite::future::poll_once},
-<a href=#21 id=21 data-nosnippet>21</a>};
+<a href=#16 id=16 data-nosnippet>16</a><span class="kw">use </span>bevy::{
+<a href=#17 id=17 data-nosnippet>17</a>    platform::collections::HashMap,
+<a href=#18 id=18 data-nosnippet>18</a>    prelude::<span class="kw-2">*</span>,
+<a href=#19 id=19 data-nosnippet>19</a>    tasks::{AsyncComputeTaskPool, Task, block_on, futures_lite::future::poll_once},
+<a href=#20 id=20 data-nosnippet>20</a>};
+<a href=#21 id=21 data-nosnippet>21</a><span class="kw">use </span>eros::bail;
 <a href=#22 id=22 data-nosnippet>22</a><span class="kw">use </span>moonshine_core::kind::<span class="kw-2">*</span>;
 <a href=#23 id=23 data-nosnippet>23</a><span class="kw">use </span>paiagram_rw::save::{LoadCandidate, SaveData};
 <a href=#24 id=24 data-nosnippet>24</a>
@@ -211,7 +211,7 @@
 <a href=#211 id=211 data-nosnippet>211</a>    <span class="prelude-val">Some</span>(PathBuf::from(filename))
 <a href=#212 id=212 data-nosnippet>212</a>}
 <a href=#213 id=213 data-nosnippet>213</a>
-<a href=#214 id=214 data-nosnippet>214</a><span class="kw">pub fn </span>load_and_trigger(path: <span class="kw-2">&amp;</span>PathBuf, content: Vec&lt;u8&gt;, commands: <span class="kw-2">&amp;mut </span>Commands) -&gt; <span class="prelude-ty">Result</span>&lt;()&gt; {
+<a href=#214 id=214 data-nosnippet>214</a><span class="kw">pub fn </span>load_and_trigger(path: <span class="kw-2">&amp;</span>PathBuf, content: Vec&lt;u8&gt;, commands: <span class="kw-2">&amp;mut </span>Commands) -&gt; eros::Result&lt;()&gt; {
 <a href=#215 id=215 data-nosnippet>215</a>    <span class="kw">match </span>path.extension().and_then(|s| s.to_str()) {
 <a href=#216 id=216 data-nosnippet>216</a>        <span class="prelude-val">Some</span>(<span class="string">"paia"</span>) =&gt; {
 <a href=#217 id=217 data-nosnippet>217</a>            commands.insert_resource(LoadCandidate(SaveData::CompressedCbor(content)));
@@ -234,8 +234,8 @@
 <a href=#234 id=234 data-nosnippet>234</a>        <span class="prelude-val">Some</span>(<span class="string">"ron"</span>) =&gt; {
 <a href=#235 id=235 data-nosnippet>235</a>            commands.insert_resource(LoadCandidate(SaveData::Ron(content)));
 <a href=#236 id=236 data-nosnippet>236</a>        }
-<a href=#237 id=237 data-nosnippet>237</a>        <span class="prelude-val">Some</span>(e) =&gt; <span class="kw">return </span><span class="prelude-val">Err</span>(<span class="macro">anyhow!</span>(<span class="string">"Unexpected extension: {e}"</span>)),
-<a href=#238 id=238 data-nosnippet>238</a>        <span class="prelude-val">None </span>=&gt; <span class="kw">return </span><span class="prelude-val">Err</span>(<span class="macro">anyhow!</span>(<span class="string">"Path does not have an extension"</span>)),
+<a href=#237 id=237 data-nosnippet>237</a>        <span class="prelude-val">Some</span>(e) =&gt; <span class="macro">bail!</span>(<span class="string">"Unexpected extension: {}"</span>, e),
+<a href=#238 id=238 data-nosnippet>238</a>        <span class="prelude-val">None </span>=&gt;<span class="macro">bail!</span>(<span class="string">"Path does not have an extension"</span>),
 <a href=#239 id=239 data-nosnippet>239</a>    }
 <a href=#240 id=240 data-nosnippet>240</a>    <span class="kw">return </span><span class="prelude-val">Ok</span>(());
 <a href=#241 id=241 data-nosnippet>241</a>}
