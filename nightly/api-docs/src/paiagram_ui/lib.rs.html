@@ -638,7 +638,7 @@
 <a href=#638 id=638 data-nosnippet>638</a>            ui.separator();
 <a href=#639 id=639 data-nosnippet>639</a>            <span class="kw">if </span>ui.button(<span class="string">"Project remarks"</span>).clicked() {
 <a href=#640 id=640 data-nosnippet>640</a>                <span class="self">self</span>.world
-<a href=#641 id=641 data-nosnippet>641</a>                    .write_message(OpenOrFocus(MainTab::Text(TextTab { entity: <span class="prelude-val">None </span>})));
+<a href=#641 id=641 data-nosnippet>641</a>                    .write_message(OpenOrFocus(MainTab::Text(TextTab::new(<span class="prelude-val">None</span>))));
 <a href=#642 id=642 data-nosnippet>642</a>            }
 <a href=#643 id=643 data-nosnippet>643</a>            <span class="kw">if let </span><span class="prelude-val">Some</span>(e) = <span class="self">self
 <a href=#644 id=644 data-nosnippet>644</a>                </span>.world
@@ -646,7 +646,7 @@
 <a href=#646 id=646 data-nosnippet>646</a>                .unwrap()
 <a href=#647 id=647 data-nosnippet>647</a>            {
 <a href=#648 id=648 data-nosnippet>648</a>                <span class="self">self</span>.world
-<a href=#649 id=649 data-nosnippet>649</a>                    .write_message(OpenOrFocus(MainTab::Text(TextTab { entity: <span class="prelude-val">Some</span>(e) })));
+<a href=#649 id=649 data-nosnippet>649</a>                    .write_message(OpenOrFocus(MainTab::Text(TextTab::new(<span class="prelude-val">Some</span>(e)))));
 <a href=#650 id=650 data-nosnippet>650</a>            }
 <a href=#651 id=651 data-nosnippet>651</a>        });
 <a href=#652 id=652 data-nosnippet>652</a>    }
