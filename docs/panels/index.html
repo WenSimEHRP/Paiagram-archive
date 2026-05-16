@@ -34,19 +34,19 @@
           <div class="[&amp;>a]:block [&amp;>a]:w-full [&amp;>a]:px-2 [&amp;>a]:py-1"><a href="../index.html">Introduction</a></div>
         </div>
         <div class="w-full relative hover:bg-neutral-200 ">
-          <div class="[&amp;>a]:block [&amp;>a]:w-full [&amp;>a]:px-2 [&amp;>a]:py-1"><a href="../import/qetrc.html">Importing qETRC/pyETRC Files</a></div>
+          <div class="[&amp;>a]:block [&amp;>a]:w-full [&amp;>a]:px-2 [&amp;>a]:py-1"><a href="../import/qetrc.html">Importing qETRC/pyETRC</a></div>
         </div>
         <div class="w-full relative hover:bg-neutral-200 ">
-          <div class="[&amp;>a]:block [&amp;>a]:w-full [&amp;>a]:px-2 [&amp;>a]:py-1"><a href="../import/oudia.html">Importing OuDia and OuDiaSecond Files</a></div>
+          <div class="[&amp;>a]:block [&amp;>a]:w-full [&amp;>a]:px-2 [&amp;>a]:py-1"><a href="../import/oudia.html">Importing OuDia(Second)</a></div>
         </div>
         <div class="w-full relative hover:bg-neutral-200 ">
-          <div class="[&amp;>a]:block [&amp;>a]:w-full [&amp;>a]:px-2 [&amp;>a]:py-1"><a href="../import/gtfs.html">Importing GTFS Static Files</a></div>
+          <div class="[&amp;>a]:block [&amp;>a]:w-full [&amp;>a]:px-2 [&amp;>a]:py-1"><a href="../import/gtfs.html">Importing GTFS Static</a></div>
         </div>
         <div class="w-full relative hover:bg-neutral-200 ">
           <div class="[&amp;>a]:block [&amp;>a]:w-full [&amp;>a]:px-2 [&amp;>a]:py-1"><a href="../export/paia.html">Exporting to .paia</a></div>
         </div>
         <div class="w-full relative hover:bg-neutral-200 ">
-          <div class="[&amp;>a]:block [&amp;>a]:w-full [&amp;>a]:px-2 [&amp;>a]:py-1"><a href="../export/oudia.html">Exporting to OuDia Format</a></div>
+          <div class="[&amp;>a]:block [&amp;>a]:w-full [&amp;>a]:px-2 [&amp;>a]:py-1"><a href="../export/oudia.html">Exporting to OuDia</a></div>
         </div>
         <div class="w-full relative hover:bg-neutral-200 ">
           <div class="[&amp;>a]:block [&amp;>a]:w-full [&amp;>a]:px-2 [&amp;>a]:py-1"><a href="../export/typst-diagram.html">Exporting as Typst Diagram</a></div>
@@ -70,6 +70,15 @@
         <div class="w-full relative hover:bg-neutral-200 ">
           <div class="[&amp;>a]:block [&amp;>a]:w-full [&amp;>a]:px-2 [&amp;>a]:py-1"><a href="../misc/web.html">Paiagram Web</a></div>
         </div>
+        <div class="w-full relative hover:bg-neutral-200 ">
+          <div class="[&amp;>a]:block [&amp;>a]:w-full [&amp;>a]:px-2 [&amp;>a]:py-1"><a href="../changelog.html">Changelog</a></div>
+        </div>
+        <div class="w-full relative hover:bg-neutral-200 ">
+          <div class="[&amp;>a]:block [&amp;>a]:w-full [&amp;>a]:px-2 [&amp;>a]:py-1"><a href="../license.html">License</a></div>
+        </div>
+        <div class="w-full relative hover:bg-neutral-200 ">
+          <div class="[&amp;>a]:block [&amp;>a]:w-full [&amp;>a]:px-2 [&amp;>a]:py-1"><a href="../building.html">Building Paiagram</a></div>
+        </div>
       </div>
     </nav>
     <article class="p-3 sm:p-6 md:p-8 max-w-[52rem] md:ml-72 prose prose-neutral leading-normal prose-pre:bg-neutral-100 prose-pre:text-neutral-900 prose-pre:rounded-none font-[450]">
@@ -79,24 +88,57 @@
       <p>The tiling system allows you to group multiple tabs or tab groups together. You can horizontally or vertically split your workspace into many parts to quickly switch between tasks.</p>
       <h2 id="loc-2">Commands Panel</h2>
       <p>You can use the shortcut <code>Ctrl+P</code> to open the command panel, and quickly open tabs from the command panel. You can search up station, route, and trip names from the command panel to quickly open station, route, and trip tabs.</p>
-      <h3>Searching Chinese and Japanese Names using Pinyin and Romaji</h3>
-      <p>You can also search Chinese and Japanese using Pinyin, Pinyin acronyms, Double Pinyin, and Hepburn–style Romaji. For example, all of those queries would match “北京西”:</p>
-      <ul>
-        <li><code>beijingxi</code> (Pinyin)</li>
-        <li><code>bjx</code> (Pinyin acronym)</li>
-        <li><code>bzj;xi</code> (Microsoft Double Pinyin)</li>
-        <li><code>pekinnishi</code> (Romaji)</li>
-        <li><code>pekin</code> (Romaji)</li>
-      </ul>
+      <h3>Searching Chinese and Japanese Names with Pinyin and Romaji</h3>
+      <p>You can also search Chinese and Japanese with Pinyin, Pinyin acronyms, Double Pinyin, and Hepburn–style Romaji. For example, all of those queries would match “北京西”:</p>
+      <table>
+        <tr>
+          <td><code>beijingxi</code></td>
+          <td>Pinyin</td>
+        </tr>
+        <tr>
+          <td><code>bjx</code></td>
+          <td>Pinyin acronym</td>
+        </tr>
+        <tr>
+          <td><code>bzj;xi</code></td>
+          <td>Microsoft Double Pinyin</td>
+        </tr>
+        <tr>
+          <td><code>pekinnishi</code></td>
+          <td>Romaji</td>
+        </tr>
+        <tr>
+          <td><code>pekin</code></td>
+          <td>Romaji</td>
+        </tr>
+      </table>
       <p>And all of those would match “山手線”:</p>
-      <ul>
-        <li><code>shanshouxian</code> (Pinyin)</li>
-        <li><code>ssx</code> (Pinyin acronym)</li>
-        <li><code>ujubxm</code> (Microsoft Double Pinyin)</li>
-        <li><code>yamate</code> (Romaji)</li>
-        <li><code>yamatesen</code> (Romaji)</li>
-        <li><code>yamanotesen</code> (Romaji)</li>
-      </ul>
+      <table>
+        <tr>
+          <td><code>shanshouxian</code></td>
+          <td>Pinyin</td>
+        </tr>
+        <tr>
+          <td><code>ssx</code></td>
+          <td>Pinyin acronym</td>
+        </tr>
+        <tr>
+          <td><code>ujubxm</code></td>
+          <td>Microsoft Double Pinyin</td>
+        </tr>
+        <tr>
+          <td><code>yamate</code></td>
+          <td>Romaji</td>
+        </tr>
+        <tr>
+          <td><code>yamatesen</code></td>
+          <td>Romaji</td>
+        </tr>
+        <tr>
+          <td><code>yamanotesen</code></td>
+          <td>Romaji</td>
+        </tr>
+      </table>
       <p>Please note that the Romaji matcher has its limitations. There are so many readings for the same character, and the system may fail when processing some specific character combinations. For example, <code>kasuga</code> could not match “春日”, and <code>haneda</code> won’t match “羽田” (although in this case you could enter <code>haneten</code> instead).</p>
       <p>This feature is supported by <a href="https://github.com/Chaoses-Ib/ib-matcher">the IB Matcher</a>. If you like this feature, consider giving the author a star on GitHub!</p>
       <h2 id="loc-3">Assistance Panel / Right Panel</h2>

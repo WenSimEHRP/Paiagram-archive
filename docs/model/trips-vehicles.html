@@ -34,19 +34,19 @@
           <div class="[&amp;>a]:block [&amp;>a]:w-full [&amp;>a]:px-2 [&amp;>a]:py-1"><a href="../index.html">Introduction</a></div>
         </div>
         <div class="w-full relative hover:bg-neutral-200 ">
-          <div class="[&amp;>a]:block [&amp;>a]:w-full [&amp;>a]:px-2 [&amp;>a]:py-1"><a href="../import/qetrc.html">Importing qETRC/pyETRC Files</a></div>
+          <div class="[&amp;>a]:block [&amp;>a]:w-full [&amp;>a]:px-2 [&amp;>a]:py-1"><a href="../import/qetrc.html">Importing qETRC/pyETRC</a></div>
         </div>
         <div class="w-full relative hover:bg-neutral-200 ">
-          <div class="[&amp;>a]:block [&amp;>a]:w-full [&amp;>a]:px-2 [&amp;>a]:py-1"><a href="../import/oudia.html">Importing OuDia and OuDiaSecond Files</a></div>
+          <div class="[&amp;>a]:block [&amp;>a]:w-full [&amp;>a]:px-2 [&amp;>a]:py-1"><a href="../import/oudia.html">Importing OuDia(Second)</a></div>
         </div>
         <div class="w-full relative hover:bg-neutral-200 ">
-          <div class="[&amp;>a]:block [&amp;>a]:w-full [&amp;>a]:px-2 [&amp;>a]:py-1"><a href="../import/gtfs.html">Importing GTFS Static Files</a></div>
+          <div class="[&amp;>a]:block [&amp;>a]:w-full [&amp;>a]:px-2 [&amp;>a]:py-1"><a href="../import/gtfs.html">Importing GTFS Static</a></div>
         </div>
         <div class="w-full relative hover:bg-neutral-200 ">
           <div class="[&amp;>a]:block [&amp;>a]:w-full [&amp;>a]:px-2 [&amp;>a]:py-1"><a href="../export/paia.html">Exporting to .paia</a></div>
         </div>
         <div class="w-full relative hover:bg-neutral-200 ">
-          <div class="[&amp;>a]:block [&amp;>a]:w-full [&amp;>a]:px-2 [&amp;>a]:py-1"><a href="../export/oudia.html">Exporting to OuDia Format</a></div>
+          <div class="[&amp;>a]:block [&amp;>a]:w-full [&amp;>a]:px-2 [&amp;>a]:py-1"><a href="../export/oudia.html">Exporting to OuDia</a></div>
         </div>
         <div class="w-full relative hover:bg-neutral-200 ">
           <div class="[&amp;>a]:block [&amp;>a]:w-full [&amp;>a]:px-2 [&amp;>a]:py-1"><a href="../export/typst-diagram.html">Exporting as Typst Diagram</a></div>
@@ -56,7 +56,7 @@
         </div>
         <div class="w-full relative bg-white border-y border-neutral-300 ">
           <div class="[&amp;>a]:block [&amp;>a]:w-full [&amp;>a]:px-2 [&amp;>a]:py-1"><a href="#">Trips and Vehicles</a></div>
-          <div class=" mx-2 border-t border-neutral-300 [&amp;>a]:px-2 [&amp;>a]:py-1 [&amp;>a]:block [&amp;>a]:hover:bg-neutral-200"><a href="#loc-1">Trips</a><a href="#loc-2">Travel Mode</a><a href="#loc-3">Vehicles</a></div>
+          <div class=" mx-2 border-t border-neutral-300 [&amp;>a]:px-2 [&amp;>a]:py-1 [&amp;>a]:block [&amp;>a]:hover:bg-neutral-200"><a href="#loc-1">Trips</a><a href="#travel-mode">Travel Mode</a><a href="#loc-2">Timetabled, Fixed, and Derived Entries</a><a href="#loc-3">Vehicles</a></div>
         </div>
         <div class="w-full relative hover:bg-neutral-200 ">
           <div class="[&amp;>a]:block [&amp;>a]:w-full [&amp;>a]:px-2 [&amp;>a]:py-1"><a href="../panels/index.html">The Tiling System</a></div>
@@ -70,15 +70,24 @@
         <div class="w-full relative hover:bg-neutral-200 ">
           <div class="[&amp;>a]:block [&amp;>a]:w-full [&amp;>a]:px-2 [&amp;>a]:py-1"><a href="../misc/web.html">Paiagram Web</a></div>
         </div>
+        <div class="w-full relative hover:bg-neutral-200 ">
+          <div class="[&amp;>a]:block [&amp;>a]:w-full [&amp;>a]:px-2 [&amp;>a]:py-1"><a href="../changelog.html">Changelog</a></div>
+        </div>
+        <div class="w-full relative hover:bg-neutral-200 ">
+          <div class="[&amp;>a]:block [&amp;>a]:w-full [&amp;>a]:px-2 [&amp;>a]:py-1"><a href="../license.html">License</a></div>
+        </div>
+        <div class="w-full relative hover:bg-neutral-200 ">
+          <div class="[&amp;>a]:block [&amp;>a]:w-full [&amp;>a]:px-2 [&amp;>a]:py-1"><a href="../building.html">Building Paiagram</a></div>
+        </div>
       </div>
     </nav>
     <article class="p-3 sm:p-6 md:p-8 max-w-[52rem] md:ml-72 prose prose-neutral leading-normal prose-pre:bg-neutral-100 prose-pre:text-neutral-900 prose-pre:rounded-none font-[450]">
       <h1>Trips and Vehicles</h1>
       <h2 id="loc-1">Trips</h2>
-      <p>A trip is the basic unit in organizing the network. Each trip has a class, associated vehicles, and a list of stations to visit.</p>
-      <p>A trip runs on the network graph. Its path is defined by its schedule. A schedule contains a set of trip entries, and each of them has an arrival mode, a departure mode, and a stop in the network graph. A trip could never jump between two stops, unless there are absolutely no paths connecting those two stops (this is also considered an error).</p>
-      <p>Sometimes the trip does not take your desired route. In this case, you can add dummy entries with Non-stop arrival mode and Flexible departure mode (see Travel Mode for details).</p>
-      <h2 id="loc-2">Travel Mode</h2>
+      <p>A trip is the basic unit in the network. Each trip has a class, associated vehicles, and an entry list which defines which stations to visit.</p>
+      <p>A trip runs on the network graph. Its path is defined by its schedule. A schedule contains a set of trip entries, and each of them has an arrival mode, a departure mode, and is associated with a station in the network graph. A trip could never jump between two stations, unless there are absolutely no paths connecting those two stations, which is considered an error.</p>
+      <p>Sometimes the trip does not take your desired route. In this case, you can add dummy entries with Non-stop arrival mode and Flexible departure mode (see <a href="#travel-mode">Travel Mode</a> for details).</p>
+      <h2 id="travel-mode">Travel Mode</h2>
       <p>Each trip contains a set of entries. Each entry contains arrival and departure modes. A departure mode could be any of the following:</p>
       <table>
         <tr>
@@ -114,6 +123,43 @@
         </tr>
       </table>
       <p>Travel modes are designed to simplify work. For example, in cases where you only have an accumulated travel time for specific intervals. You can easily convert between travel modes without losing work. You can also make it calculate the intermediate time for you by setting travel modes to “flexible” or “non-stop”.</p>
+      <h2 id="loc-2">Timetabled, Fixed, and Derived Entries</h2>
+      <p>Sometimes, the trip may only have some timetabled entries, and is only guaranteed to visit some stations. For example, an express train might only have the times at the first and last stations, and the times between those stations, as well as the path taken between those stations, are unknown. In this case, Paiagram would do the following:</p>
+      <ul>
+        <li>Calculate a shortest path between every entry pair in the timetable that doesn’t have a direct path from the first to the second</li>
+        <li>Assign that shortest path to the trip</li>
+        <li>Automatically calculate the times at each intermediate station. Each intermediate station would generate a corresponding <strong>derived</strong> entry.</li>
+      </ul>
+      <p>Each entry in the trip entry list falls into one of the following categories:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Travel Modes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Timetabled</td>
+            <td>The trip would visit the entry’s station at a determined time.</td>
+            <td>All travel modes except (Flexible, Flexible)</td>
+          </tr>
+          <tr>
+            <td>Fixed</td>
+            <td>The trip is guaranteed to visit the station, but the exact time is uncertain.</td>
+            <td>(Flexible, Flexible)</td>
+          </tr>
+          <tr>
+            <td>Derived</td>
+            <td>The trip is not guaranteed to visit this station.</td>
+            <td>No travel modes</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>You cannot edit the time of derived entries. However, it is possible to convert derived entries to fixed or timetabled entries. In contrast, you can only delete timetabled and fixed entries.</p>
+      <h3>Editing the Trip’s Path</h3>
+      <p>You can edit the trip’s path by inserting extra fixed (i.e. Flexible arrival mode, Flexible departure mode) entries.</p>
       <h2 id="loc-3">Vehicles</h2>
       <p>A vehicle is the “executor” of trips. Each vehicle runs a set of trips. Trips could be shared by multiple vehicles (as in coupling and decoupling trains).</p>
       <footer class="mt-8 grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-4">

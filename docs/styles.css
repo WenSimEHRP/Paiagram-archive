@@ -1155,20 +1155,108 @@ button, input:where([type='button'], [type='reset'], [type='submit']), ::file-se
 }
 
 @media (width >= 48rem) {
+  .md\:hidden {
+    display: none;
+  }
+}
+
+@media (width >= 48rem) {
   .md\:col-span-2 {
     grid-column: span 2 / span 2;
   }
 }
 
 @media (width >= 48rem) {
-  .md\:grid-cols-\[1fr_1fr\] {
-    grid-template-columns: 1fr 1fr;
+  .md\:col-start-2 {
+    grid-column-start: 2;
+  }
+}
+
+@media (width >= 48rem) {
+  .md\:p-8 {
+    padding: 2rem;
+  }
+}
+
+@media (width >= 40rem) {
+  .sm\:p-6 {
+    padding: 1.5rem;
+  }
+}
+
+@media (width >= 48rem) {
+  .md\:translate-x-0 {
+    --en-translate-x: 0px;
+    transform: translate3d(var(--en-translate-x), var(--en-translate-y), var(--en-translate-z)) rotateX(var(--en-rotate-x)) rotateY(var(--en-rotate-y)) rotateZ(var(--en-rotate-z)) skewX(var(--en-skew-x)) skewY(var(--en-skew-y)) scale3d(var(--en-scale-x), var(--en-scale-y), var(--en-scale-z));
+  }
+}
+
+@media (width >= 48rem) {
+  .md\:shadow-none {
+    --en-shadow: 0 0 #0000;
+    box-shadow: var(--en-inset-shadow, 0 0 #0000), var(--en-inset-ring-shadow, 0 0 #0000), var(--en-ring-offset-shadow, 0 0 #0000), var(--en-ring-shadow, 0 0 #0000), var(--en-shadow);
+  }
+}
+
+@media (width >= 48rem) {
+  .md\:hidden {
+    display: none;
+  }
+}
+
+@media (width >= 48rem) {
+  .md\:col-span-2 {
+    grid-column: span 2 / span 2;
   }
 }
 
 @media (width >= 48rem) {
   .md\:ml-72 {
     margin-left: 18rem;
+  }
+}
+
+@media (width >= 48rem) {
+  .md\:p-8 {
+    padding: 2rem;
+  }
+}
+
+@media (width >= 40rem) {
+  .sm\:p-6 {
+    padding: 1.5rem;
+  }
+}
+
+@media (width >= 48rem) {
+  .md\:translate-x-0 {
+    --en-translate-x: 0px;
+    transform: translate3d(var(--en-translate-x), var(--en-translate-y), var(--en-translate-z)) rotateX(var(--en-rotate-x)) rotateY(var(--en-rotate-y)) rotateZ(var(--en-rotate-z)) skewX(var(--en-skew-x)) skewY(var(--en-skew-y)) scale3d(var(--en-scale-x), var(--en-scale-y), var(--en-scale-z));
+  }
+}
+
+@media (width >= 48rem) {
+  .md\:shadow-none {
+    --en-shadow: 0 0 #0000;
+    box-shadow: var(--en-inset-shadow, 0 0 #0000), var(--en-inset-ring-shadow, 0 0 #0000), var(--en-ring-offset-shadow, 0 0 #0000), var(--en-ring-shadow, 0 0 #0000), var(--en-shadow);
+  }
+}
+
+@media (width >= 48rem) {
+  .md\:hidden {
+    display: none;
+  }
+}
+
+@media (width >= 48rem) {
+  .md\:col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+}
+
+@media (width >= 48rem) {
+  .md\:col-start-2 {
+    grid-column-start: 2;
   }
 }
 
@@ -1249,14 +1337,14 @@ button, input:where([type='button'], [type='reset'], [type='submit']), ::file-se
 }
 
 @media (width >= 48rem) {
-  .md\:grid-cols-\[1fr_1fr\] {
-    grid-template-columns: 1fr 1fr;
+  .md\:col-start-2 {
+    grid-column-start: 2;
   }
 }
 
 @media (width >= 48rem) {
-  .md\:ml-72 {
-    margin-left: 18rem;
+  .md\:grid-cols-\[1fr_1fr\] {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -1337,14 +1425,14 @@ button, input:where([type='button'], [type='reset'], [type='submit']), ::file-se
 }
 
 @media (width >= 48rem) {
-  .md\:grid-cols-\[1fr_1fr\] {
-    grid-template-columns: 1fr 1fr;
+  .md\:col-start-2 {
+    grid-column-start: 2;
   }
 }
 
 @media (width >= 48rem) {
-  .md\:ml-72 {
-    margin-left: 18rem;
+  .md\:grid-cols-\[1fr_1fr\] {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -1425,14 +1513,14 @@ button, input:where([type='button'], [type='reset'], [type='submit']), ::file-se
 }
 
 @media (width >= 48rem) {
-  .md\:grid-cols-\[1fr_1fr\] {
-    grid-template-columns: 1fr 1fr;
+  .md\:col-start-2 {
+    grid-column-start: 2;
   }
 }
 
 @media (width >= 48rem) {
-  .md\:ml-72 {
-    margin-left: 18rem;
+  .md\:grid-cols-\[1fr_1fr\] {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -1513,14 +1601,14 @@ button, input:where([type='button'], [type='reset'], [type='submit']), ::file-se
 }
 
 @media (width >= 48rem) {
-  .md\:grid-cols-\[1fr_1fr\] {
-    grid-template-columns: 1fr 1fr;
+  .md\:col-start-2 {
+    grid-column-start: 2;
   }
 }
 
 @media (width >= 48rem) {
-  .md\:ml-72 {
-    margin-left: 18rem;
+  .md\:grid-cols-\[1fr_1fr\] {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -1601,6 +1689,50 @@ button, input:where([type='button'], [type='reset'], [type='submit']), ::file-se
 }
 
 @media (width >= 48rem) {
+  .md\:col-start-2 {
+    grid-column-start: 2;
+  }
+}
+
+@media (width >= 48rem) {
+  .md\:grid-cols-\[1fr_1fr\] {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (width >= 48rem) {
+  .md\:p-8 {
+    padding: 2rem;
+  }
+}
+
+@media (width >= 40rem) {
+  .sm\:p-6 {
+    padding: 1.5rem;
+  }
+}
+
+@media (width >= 48rem) {
+  .md\:translate-x-0 {
+    --en-translate-x: 0px;
+    transform: translate3d(var(--en-translate-x), var(--en-translate-y), var(--en-translate-z)) rotateX(var(--en-rotate-x)) rotateY(var(--en-rotate-y)) rotateZ(var(--en-rotate-z)) skewX(var(--en-skew-x)) skewY(var(--en-skew-y)) scale3d(var(--en-scale-x), var(--en-scale-y), var(--en-scale-z));
+  }
+}
+
+@media (width >= 48rem) {
+  .md\:shadow-none {
+    --en-shadow: 0 0 #0000;
+    box-shadow: var(--en-inset-shadow, 0 0 #0000), var(--en-inset-ring-shadow, 0 0 #0000), var(--en-ring-offset-shadow, 0 0 #0000), var(--en-ring-shadow, 0 0 #0000), var(--en-shadow);
+  }
+}
+
+@media (width >= 48rem) {
+  .md\:col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+}
+
+@media (width >= 48rem) {
   .md\:grid-cols-\[1fr_1fr\] {
     grid-template-columns: 1fr 1fr;
   }
@@ -1635,6 +1767,12 @@ button, input:where([type='button'], [type='reset'], [type='submit']), ::file-se
   .md\:shadow-none {
     --en-shadow: 0 0 #0000;
     box-shadow: var(--en-inset-shadow, 0 0 #0000), var(--en-inset-ring-shadow, 0 0 #0000), var(--en-ring-offset-shadow, 0 0 #0000), var(--en-ring-shadow, 0 0 #0000), var(--en-shadow);
+  }
+}
+
+@media (width >= 48rem) {
+  .md\:hidden {
+    display: none;
   }
 }
 
@@ -1698,6 +1836,30 @@ button, input:where([type='button'], [type='reset'], [type='submit']), ::file-se
   border-radius: 0;
 }
 
+.prose-pre\:text-neutral-900 :is(:where(pre):not(:where([class~="not-prose"] *))) {
+  color: oklch(20.5% 0 0);
+}
+
+.prose-pre\:rounded-none :is(:where(pre):not(:where([class~="not-prose"] *))) {
+  border-radius: 0;
+}
+
+.prose-pre\:text-neutral-900 :is(:where(pre):not(:where([class~="not-prose"] *))) {
+  color: oklch(20.5% 0 0);
+}
+
+.prose-pre\:rounded-none :is(:where(pre):not(:where([class~="not-prose"] *))) {
+  border-radius: 0;
+}
+
+.prose-pre\:text-neutral-900 :is(:where(pre):not(:where([class~="not-prose"] *))) {
+  color: oklch(20.5% 0 0);
+}
+
+.prose-pre\:rounded-none :is(:where(pre):not(:where([class~="not-prose"] *))) {
+  border-radius: 0;
+}
+
 .prose-pre\:bg-neutral-100 :is(:where(pre):not(:where([class~="not-prose"] *))) {
   background-color: oklch(97% 0 0);
 }
@@ -1810,6 +1972,48 @@ button, input:where([type='button'], [type='reset'], [type='submit']), ::file-se
   height: 100%;
 }
 
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:no-underline>a {
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:p-4>a {
+  padding: 1rem;
+}
+
+.\[\&\>a\]\:h-full>a {
+  height: 100%;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:no-underline>a {
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+}
+
+.\[\&\>a\]\:p-4>a {
+  padding: 1rem;
+}
+
+.\[\&\>a\]\:h-full>a {
+  height: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
 .\[\&\>a\]\:no-underline>a {
   -webkit-text-decoration-line: none;
   text-decoration-line: none;
@@ -1819,32 +2023,54 @@ button, input:where([type='button'], [type='reset'], [type='submit']), ::file-se
   display: block;
 }
 
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
+.\[\&\>a\]\:p-4>a {
+  padding: 1rem;
+}
+
+.\[\&\>a\]\:h-full>a {
+  height: 100%;
 }
 
 .\[\&\>a\]\:w-full>a {
   width: 100%;
 }
 
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
+.\[\&\>a\]\:no-underline>a {
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+}
+
+.\[\&\>a\]\:p-4>a {
+  padding: 1rem;
+}
+
+.\[\&\>a\]\:h-full>a {
+  height: 100%;
 }
 
 .\[\&\>a\]\:w-full>a {
   width: 100%;
 }
 
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
+.\[\&\>a\]\:no-underline>a {
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
 }
 
 .\[\&\>a\]\:w-full>a {
   width: 100%;
 }
 
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
 }
 
 .\[\&\>a\]\:w-full>a {
@@ -1879,6 +2105,190 @@ button, input:where([type='button'], [type='reset'], [type='submit']), ::file-se
   display: block;
 }
 
+.\[\&\>a\]\:p-4>a {
+  padding: 1rem;
+}
+
+.\[\&\>a\]\:h-full>a {
+  height: 100%;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:no-underline>a {
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+}
+
+.\[\&\>a\]\:p-4>a {
+  padding: 1rem;
+}
+
+.\[\&\>a\]\:h-full>a {
+  height: 100%;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:no-underline>a {
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:p-4>a {
+  padding: 1rem;
+}
+
+.\[\&\>a\]\:h-full>a {
+  height: 100%;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:no-underline>a {
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+}
+
+.\[\&\>a\]\:p-4>a {
+  padding: 1rem;
+}
+
+.\[\&\>a\]\:h-full>a {
+  height: 100%;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:no-underline>a {
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+}
+
 .\[\&\>a\]\:py-1>a {
   padding-block: 0.25rem;
 }
@@ -1925,6 +2335,1482 @@ button, input:where([type='button'], [type='reset'], [type='submit']), ::file-se
 
 .\[\&\>a\]\:w-full>a {
   width: 100%;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:p-4>a {
+  padding: 1rem;
+}
+
+.\[\&\>a\]\:h-full>a {
+  height: 100%;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:no-underline>a {
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+}
+
+.\[\&\>a\]\:p-4>a {
+  padding: 1rem;
+}
+
+.\[\&\>a\]\:h-full>a {
+  height: 100%;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:no-underline>a {
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:p-4>a {
+  padding: 1rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:no-underline>a {
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+}
+
+.\[\&\>a\]\:p-4>a {
+  padding: 1rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:no-underline>a {
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:p-4>a {
+  padding: 1rem;
+}
+
+.\[\&\>a\]\:h-full>a {
+  height: 100%;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:no-underline>a {
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+}
+
+.\[\&\>a\]\:p-4>a {
+  padding: 1rem;
+}
+
+.\[\&\>a\]\:h-full>a {
+  height: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:no-underline>a {
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:p-4>a {
+  padding: 1rem;
+}
+
+.\[\&\>a\]\:h-full>a {
+  height: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:no-underline>a {
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+}
+
+.\[\&\>a\]\:p-4>a {
+  padding: 1rem;
+}
+
+.\[\&\>a\]\:h-full>a {
+  height: 100%;
+}
+
+.\[\&\>a\]\:no-underline>a {
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:p-4>a {
+  padding: 1rem;
+}
+
+.\[\&\>a\]\:h-full>a {
+  height: 100%;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:no-underline>a {
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+}
+
+.\[\&\>a\]\:p-4>a {
+  padding: 1rem;
+}
+
+.\[\&\>a\]\:h-full>a {
+  height: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:no-underline>a {
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:p-4>a {
+  padding: 1rem;
+}
+
+.\[\&\>a\]\:h-full>a {
+  height: 100%;
+}
+
+.\[\&\>a\]\:no-underline>a {
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+}
+
+.\[\&\>a\]\:p-4>a {
+  padding: 1rem;
+}
+
+.\[\&\>a\]\:h-full>a {
+  height: 100%;
+}
+
+.\[\&\>a\]\:no-underline>a {
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:p-4>a {
+  padding: 1rem;
+}
+
+.\[\&\>a\]\:h-full>a {
+  height: 100%;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:no-underline>a {
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+}
+
+.\[\&\>a\]\:p-4>a {
+  padding: 1rem;
+}
+
+.\[\&\>a\]\:h-full>a {
+  height: 100%;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:no-underline>a {
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:p-4>a {
+  padding: 1rem;
+}
+
+.\[\&\>a\]\:h-full>a {
+  height: 100%;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:no-underline>a {
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+}
+
+.\[\&\>a\]\:p-4>a {
+  padding: 1rem;
+}
+
+.\[\&\>a\]\:h-full>a {
+  height: 100%;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:no-underline>a {
+  -webkit-text-decoration-line: none;
+  text-decoration-line: none;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
 }
 
 .\[\&\>a\]\:p-4>a {
@@ -1965,6 +3851,82 @@ button, input:where([type='button'], [type='reset'], [type='submit']), ::file-se
   padding-block: 0.25rem;
 }
 
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:block>a {
+  display: block;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
+}
+
+.\[\&\>a\]\:px-2>a {
+  padding-inline: 0.5rem;
+}
+
 .\[\&\>a\]\:w-full>a {
   width: 100%;
 }
@@ -1989,212 +3951,6 @@ button, input:where([type='button'], [type='reset'], [type='submit']), ::file-se
   padding-block: 0.25rem;
 }
 
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:p-4>a {
-  padding: 1rem;
-}
-
-.\[\&\>a\]\:h-full>a {
-  height: 100%;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:no-underline>a {
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-}
-
-.\[\&\>a\]\:p-4>a {
-  padding: 1rem;
-}
-
-.\[\&\>a\]\:h-full>a {
-  height: 100%;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:no-underline>a {
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
 .\[\&\>a\]\:w-full>a {
   width: 100%;
 }
@@ -2207,10 +3963,6 @@ button, input:where([type='button'], [type='reset'], [type='submit']), ::file-se
   padding-inline: 0.5rem;
 }
 
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
 .\[\&\>a\]\:py-1>a {
   padding-block: 0.25rem;
 }
@@ -2219,16 +3971,12 @@ button, input:where([type='button'], [type='reset'], [type='submit']), ::file-se
   padding-inline: 0.5rem;
 }
 
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
+.\[\&\>a\]\:py-1>a {
+  padding-block: 0.25rem;
 }
 
 .\[\&\>a\]\:px-2>a {
   padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
 }
 
 .\[\&\>a\]\:p-4>a {
@@ -2381,428 +4129,6 @@ button, input:where([type='button'], [type='reset'], [type='submit']), ::file-se
   padding-inline: 0.5rem;
 }
 
-.\[\&\>a\]\:p-4>a {
-  padding: 1rem;
-}
-
-.\[\&\>a\]\:h-full>a {
-  height: 100%;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:no-underline>a {
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-}
-
-.\[\&\>a\]\:p-4>a {
-  padding: 1rem;
-}
-
-.\[\&\>a\]\:h-full>a {
-  height: 100%;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:no-underline>a {
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:p-4>a {
-  padding: 1rem;
-}
-
-.\[\&\>a\]\:h-full>a {
-  height: 100%;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:no-underline>a {
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-}
-
-.\[\&\>a\]\:p-4>a {
-  padding: 1rem;
-}
-
-.\[\&\>a\]\:h-full>a {
-  height: 100%;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:no-underline>a {
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:p-4>a {
-  padding: 1rem;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:no-underline>a {
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-}
-
-.\[\&\>a\]\:p-4>a {
-  padding: 1rem;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:no-underline>a {
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
 .\[\&\>a\]\:py-1>a {
   padding-block: 0.25rem;
 }
@@ -2829,148 +4155,6 @@ button, input:where([type='button'], [type='reset'], [type='submit']), ::file-se
 
 .\[\&\>a\]\:px-2>a {
   padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:p-4>a {
-  padding: 1rem;
-}
-
-.\[\&\>a\]\:h-full>a {
-  height: 100%;
-}
-
-.\[\&\>a\]\:no-underline>a {
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-}
-
-.\[\&\>a\]\:p-4>a {
-  padding: 1rem;
-}
-
-.\[\&\>a\]\:h-full>a {
-  height: 100%;
-}
-
-.\[\&\>a\]\:no-underline>a {
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
 }
 
 .\[\&\>a\]\:w-full>a {
@@ -2985,167 +4169,8 @@ button, input:where([type='button'], [type='reset'], [type='submit']), ::file-se
   height: 100%;
 }
 
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:no-underline>a {
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-}
-
-.\[\&\>a\]\:p-4>a {
-  padding: 1rem;
-}
-
-.\[\&\>a\]\:h-full>a {
-  height: 100%;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:no-underline>a {
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
 .\[\&\>a\]\:w-full>a {
   width: 100%;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:p-4>a {
-  padding: 1rem;
-}
-
-.\[\&\>a\]\:h-full>a {
-  height: 100%;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:no-underline>a {
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-}
-
-.\[\&\>a\]\:p-4>a {
-  padding: 1rem;
-}
-
-.\[\&\>a\]\:h-full>a {
-  height: 100%;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
 }
 
 .\[\&\>a\]\:no-underline>a {
@@ -3161,166 +4186,8 @@ button, input:where([type='button'], [type='reset'], [type='submit']), ::file-se
   padding-inline: 0.5rem;
 }
 
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:p-4>a {
-  padding: 1rem;
-}
-
-.\[\&\>a\]\:h-full>a {
-  height: 100%;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:no-underline>a {
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-}
-
-.\[\&\>a\]\:p-4>a {
-  padding: 1rem;
-}
-
-.\[\&\>a\]\:h-full>a {
-  height: 100%;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:no-underline>a {
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
+.\[\&\>a\]\:w-full>a {
+  width: 100%;
 }
 
 .\[\&\>a\]\:block>a {
@@ -3349,325 +4216,6 @@ button, input:where([type='button'], [type='reset'], [type='submit']), ::file-se
 
 .\[\&\>a\]\:block>a {
   display: block;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:p-4>a {
-  padding: 1rem;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:no-underline>a {
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-}
-
-.\[\&\>a\]\:p-4>a {
-  padding: 1rem;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:no-underline>a {
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:py-1>a {
-  padding-block: 0.25rem;
-}
-
-.\[\&\>a\]\:px-2>a {
-  padding-inline: 0.5rem;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:p-4>a {
-  padding: 1rem;
-}
-
-.\[\&\>a\]\:h-full>a {
-  height: 100%;
-}
-
-.\[\&\>a\]\:w-full>a {
-  width: 100%;
-}
-
-.\[\&\>a\]\:block>a {
-  display: block;
-}
-
-.\[\&\>a\]\:no-underline>a {
-  -webkit-text-decoration-line: none;
-  text-decoration-line: none;
 }
 
 .\[\&\>a\]\:py-1>a {
